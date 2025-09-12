@@ -1,0 +1,128 @@
+/* Estilos específicos para a página de Pesquisas */
+
+.research-container {
+    margin-top: 3rem;
+}
+
+.research-item {
+    margin-bottom: 6rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.research-item:last-child {
+    border-bottom: none;
+}
+
+.research-badge {
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.research-content h3 {
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.research-content p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.research-topics {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.research-topics li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.research-topics .bi {
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.research-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.research-lead {
+    display: flex;
+    align-items: center;
+}
+
+.research-lead img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.research-lead div p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.research-lead div h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.research-image {
+    position: relative;
+}
+
+.research-image img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.research-image:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+    color: white;
+}
+
+.cta-box h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .research-item .row {
+        flex-direction: column-reverse;
+    }
+    
+    .research-image {
+        margin-bottom: 2rem;
+    }
+    
+    .research-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPTCode | Grupo de Pesquisa em Tecnologias Computacionais</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animacoes.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pesquisas.html">Pesquisas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="equipe.html">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-3 text-white fw-bold mb-4">Grupo de Pesquisa em Tecnologias Computacionais</h1>
+            <p class="lead text-white-50 my-4">Desenvolvendo o futuro com código e inovação no Instituto Federal de Brasília.</p>
+            <div class="hero-buttons">
+                <a href="#sobre" class="btn btn-accent btn-lg me-3">Conheça o Grupo</a>
+                <a href="#contato" class="btn btn-outline-light btn-lg">Entre em Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-5 section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Quem Somos</h2>
+                    <p class="lead">O GPTCode é um grupo de pesquisa do Instituto Federal de Brasília (IFB) dedicado à investigação e ao desenvolvimento de tecnologias computacionais de ponta.</p>
+                    <p>Nossa missão é criar soluções inovadoras que abordem problemas complexos e contribuam para o avanço científico e tecnológico da sociedade. Atuamos em diversas áreas, sempre buscando a sinergia entre teoria e prática.</p>
+                    <div class="mt-4">
+                        <a href="equipe.html" class="btn btn-outline-primary me-2">Conheça nossa equipe</a>
+                        <a href="pesquisas.html" class="btn btn-primary">Nossas pesquisas</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://via.placeholder.com/600x400.png?text=Laboratório+GPTCode" class="img-fluid rounded-3 shadow-lg" alt="Imagem do laboratório GPTCode">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="py-5 bg-light section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Destaques</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card highlight-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://via.placeholder.com/350x250.png?text=Destaque+GPTCode" class="img-fluid rounded-start" alt="Destaque pesquisa">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <span class="badge bg-accent mb-2">Nova Publicação</span>
+                                    <h5 class="card-title">Um Framework para Análise de Segurança em Aplicações Web</h5>
+                                    <p class="card-text">Artigo recentemente publicado no Simpósio Brasileiro de Segurança da Informação apresenta avanços significativos na detecção automatizada de vulnerabilidades.</p>
+                                    <a href="publicacao_detalhe.html" class="btn btn-sm btn-accent">Ler mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pesquisas Preview -->
+    <section id="pesquisas-preview" class="py-5 research-section section-padding">
+        <div class="container">
+            <div class="text-center text-white mb-5">
+                <h2 class="section-title">Linhas de Pesquisa</h2>
+                <p class="section-subtitle">Nossas principais áreas de atuação e investigação científica.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="research-icon">
+                            <i class="bi bi-robot"></i>
+                        </div>
+                        <h5 class="mt-3">Inteligência Artificial e Machine Learning</h5>
+                        <p class="small">Modelos preditivos, redes neurais e sistemas inteligentes para soluções inovadoras.</p>
+                        <a href="pesquisas.html#ai" class="btn btn-sm btn-outline-light mt-3">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="research-icon">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                        <h5 class="mt-3">Segurança da Informação</h5>
+                        <p class="small">Criptografia, segurança de redes e análise de vulnerabilidades em sistemas computacionais.</p>
+                        <a href="pesquisas.html#seguranca" class="btn btn-sm btn-outline-light mt-3">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="research-icon">
+                            <i class="bi bi-cloud-arrow-down-fill"></i>
+                        </div>
+                        <h5 class="mt-3">Computação em Nuvem e Distribuída</h5>
+                        <p class="small">Arquiteturas escaláveis, microsserviços e otimização de recursos em ambientes distribuídos.</p>
+                        <a href="pesquisas.html#cloud" class="btn btn-sm btn-outline-light mt-3">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="pesquisas.html" class="btn btn-accent">Ver todas as linhas de pesquisa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publicações Preview -->
+    <section id="publicacoes-preview" class="py-5 bg-dark-blue section-padding">
+        <div class="container">
+            <div class="text-center text-white mb-5">
+                <h2 class="section-title">Publicações Recentes</h2>
+                <p class="section-subtitle">Compartilhando nosso conhecimento com a comunidade científica.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="publication-card">
+                        <div class="publication-header">
+                            <span class="badge bg-accent">2025</span>
+                            <h5>Um Framework para Análise de Segurança em Aplicações Web</h5>
+                        </div>
+                        <p class="authors">Silva, J., Costa, M.</p>
+                        <p class="journal">Anais do Simpósio Brasileiro de Segurança da Informação</p>
+                        <div class="publication-actions">
+                            <a href="publicacao_detalhe.html" class="btn btn-sm btn-outline-light">Detalhes</a>
+                            <a href="#" class="btn btn-sm btn-accent ms-2"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="publication-card">
+                        <div class="publication-header">
+                            <span class="badge bg-accent">2024</span>
+                            <h5>Otimização de Custo em Microsserviços na Nuvem AWS</h5>
+                        </div>
+                        <p class="authors">Pereira, A., Souza, L.</p>
+                        <p class="journal">Revista Brasileira de Computação Aplicada</p>
+                        <div class="publication-actions">
+                            <a href="#" class="btn btn-sm btn-outline-light">Detalhes</a>
+                            <a href="#" class="btn btn-sm btn-accent ms-2"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="publicacoes.html" class="btn btn-accent">Ver todas as publicações</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parceiros -->
+    <section class="py-5 section-padding">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Parceiros e Apoiadores</h2>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="imagens/logos/ifb.png" class="img-fluid partner-logo" alt="IFB Logo">
+                </div>
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="https://via.placeholder.com/150x80.png?text=Parceiro+1" class="img-fluid partner-logo" alt="Parceiro 1">
+                </div>
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="https://via.placeholder.com/150x80.png?text=Parceiro+2" class="img-fluid partner-logo" alt="Parceiro 2">
+                </div>
+                <div class="col-md-3 col-6 text-center mb-4">
+                    <img src="https://via.placeholder.com/150x80.png?text=Parceiro+3" class="img-fluid partner-logo" alt="Parceiro 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="py-5 bg-dark-blue text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-brand">GPTCode</h3>
+                    <p>Grupo de Pesquisa em Tecnologias Computacionais</p>
+                    <p>Instituto Federal de Brasília</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contato</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Campus Brasília, SIGA, Lote 08, Brasília-DF</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:contato.gptcode@ifb.edu.br">contato.gptcode@ifb.edu.br</a></p>
+                    <p><i class="bi bi-telephone-fill me-2"></i> (61) 99999-9999</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Conecte-se</h5>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <a href="#inicio" class="btn btn-sm btn-outline-light">Voltar ao topo <i class="bi bi-arrow-up"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="small mb-0">&copy; 2025 GPTCode. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
