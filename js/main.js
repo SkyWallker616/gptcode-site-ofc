@@ -1,4 +1,4 @@
-main.jsdocument.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Navbar scroll effect
     const nav = document.getElementById('navbar');
     
