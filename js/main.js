@@ -199,4 +199,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
+    
+    // Força o favicon dinamicamente
+    (function() {
+        const faviconUrl = "imagens/logos/GPTCODE-LOGO-BARRA.png";
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.type = "image/png";
+        link.href = faviconUrl;
+    })();
 });

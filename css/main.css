@@ -695,6 +695,19 @@ footer .btn, footer .social-link {
     .navbar-toggler {
         padding: 0.3rem 0.5rem;
     }
+    
+    .quem-somos-buttons,
+    .quem-somos .btn-group,
+    .quem-somos .d-flex {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
+    }
+    .quem-somos .btn,
+    .quem-somos-buttons .btn {
+        width: 100% !important;
+        margin: 0 !important;
+    }
 }
 
 /* Ajustes para scroll suave */
@@ -704,4 +717,16 @@ html {
 
 #sobre, #contato {
     scroll-margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+    .row.align-items-center.g-0.shadow.rounded-4.bg-white.p-4 {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    .row.align-items-center.g-0.shadow.rounded-4.bg-white.p-4 .col-md-5,
+    .row.align-items-center.g-0.shadow.rounded-4.bg-white.p-4 .col-md-7 {
+        width: 100%;
+        max-width: 100%;
+    }
 }

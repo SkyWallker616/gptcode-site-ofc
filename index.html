@@ -15,6 +15,7 @@
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animacoes.css">
+    <link rel="icon" type="image/png" href="imagens/logos/GPTCODE-LOGO-BARRA.png">
 </head>
 <body>
     <!-- Navbar -->
@@ -59,8 +60,8 @@
                     <h2 class="section-title">Quem Somos</h2>
                     <p class="lead">O GPTCode é um grupo de pesquisa do Instituto Federal de Brasília (IFB) dedicado à investigação e ao desenvolvimento de technologies computacionais de ponta.</p>
                     <p>Nossa missão é criar soluções inovadoras que abordem problemas complexos e contribuam para o avanço científico e tecnológico da sociedade. Atuamos em diversas áreas, sempre buscando a sinergia entre teoria e prática.</p>
-                    <div class="mt-4">
-                        <a href="equipe.html" class="btn btn-outline-primary me-2">Conheça nossa equipe</a>
+                    <div class="quem-somos-buttons d-flex gap-3 mt-4">
+                        <a href="equipe.html" class="btn btn-outline-primary">Conheça nossa equipe</a>
                         <a href="pesquisas.html" class="btn btn-primary">Nossas pesquisas</a>
                     </div>
                 </div>
@@ -74,26 +75,25 @@
     <!-- Destaques -->
     <section class="py-5 bg-light section-padding">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Destaques</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card highlight-card">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="imagens/logos/Intellectual Property and the Future of NFT Market - logo.png" class="img-fluid rounded-start" alt="Intellectual Property and NFT Market">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <span class="badge bg-accent mb-2">Nova Publicação - 2025</span>
-                                    <h5 class="card-title">Intellectual Property and the Future of NFT Market</h5>
-                                    <p class="card-text"><strong>Autores:</strong> Alessandro Aveni (UnB) e Claudio Ulisse (IFB)</p>
-                                    <p class="card-text">Artigo discute o mercado de NFTs e as causas da crise, explorando questões legais relacionadas ao sistema de propriedade intelectual, regulamentações de IA e incertezas do mercado NFT.</p>
-                                    <p class="card-text"><small class="text-muted">Revista Processus de Estudos de Gestão, Jurídicos e Financeiros</small></p>
-                                    <a href="https://periodicos.processus.com.br/index.php/egjf/article/view/1342" target="_blank" class="btn btn-sm btn-accent">Ler Artigo Completo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row align-items-center g-0 shadow rounded-4 bg-white p-4" style="display: flex;">
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <img src="imagens/logos/Intellectual Property and the Future of NFT Market - logo.png"
+                         alt="Intellectual Property and the Future of NFT Market"
+                         class="img-fluid"
+                         style="max-width: 90%; max-height: 350px; object-fit: contain;">
+                </div>
+                <div class="col-md-7">
+                    <h3 class="fw-bold mb-2">Intellectual Property and the Future of NFT Market</h3>
+                    <p class="mb-1"><strong>Autores:</strong> Alessandro Aveni (UnB) e Claudio Ulisse (IFB)</p>
+                    <p>
+                        Artigo discute o mercado de NFTs e as causas da crise, explorando questões legais relacionadas ao sistema de propriedade intelectual, regulamentações de IA e incertezas do mercado NFT.
+                    </p>
+                    <p class="mb-2 text-muted" style="font-size: 0.95em;">
+                        Revista Processus de Estudos de Gestão, Jurídicos e Financeiros
+                    </p>
+                    <a href="https://periodicos.processus.com.br/index.php/egjf/article/view/1342" target="_blank" class="btn btn-warning fw-semibold px-4 py-2">
+                        Ler Artigo Completo
+                    </a>
                 </div>
             </div>
         </div>
