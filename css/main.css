@@ -594,6 +594,15 @@ footer .btn, footer .social-link {
     transform: translateY(-2px) scale(1.05);
 }
 
+.social-link i {
+    color: #222 !important; /* cor escura, visível em fundo branco */
+    transition: color 0.2s;
+}
+
+.social-link:hover i {
+    color: #f9c846 !important; /* cor de destaque no hover */
+}
+
 /* Page Header */
 .page-header {
     height: 40vh;
@@ -613,6 +622,12 @@ footer .btn, footer .social-link {
     height: 100%;
     background-image: url('https://www.transparenttextures.com/patterns/connected.png');
     opacity: 0.1;
+}
+
+/* Remova ou ajuste margens/padding do header */
+.page-header {
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
 }
 
 /* Responsividade */
