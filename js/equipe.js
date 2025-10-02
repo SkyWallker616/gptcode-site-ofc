@@ -1,38 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Filtragem dos membros
-    const filters = document.querySelectorAll('.btn-filter');
+    // Animação de aparecimento ao scroll
     const members = document.querySelectorAll('.team-member');
     
-    filters.forEach(filter => {
-        filter.addEventListener('click', function() {
-            // Remove a classe active de todos os filtros
-            filters.forEach(f => f.classList.remove('active'));
-            // Adiciona a classe active ao filtro clicado
-            this.classList.add('active');
-            
-            const filterValue = this.getAttribute('data-filter');
-            
-            members.forEach(member => {
-                const memberCategory = member.getAttribute('data-category');
-                
-                if (filterValue === 'all' || filterValue === memberCategory) {
-                    member.style.display = 'block';
-                    // Pequeno delay para animação
-                    setTimeout(() => {
-                        member.classList.add('visible');
-                    }, 50);
-                } else {
-                    member.classList.remove('visible');
-                    // Espera a animação terminar antes de esconder
-                    setTimeout(() => {
-                        member.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-    
-    // Animação de aparecimento ao scroll
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -50,23 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observar todos os membros da equipe
     members.forEach(member => {
         observer.observe(member);
-    });
-    
-    // Smooth scroll para as categorias
-    document.querySelectorAll('.team-filters .btn-filter').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const filter = this.getAttribute('data-filter');
-            if (filter !== 'all') {
-                const targetSection = document.getElementById(filter);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
     });
     
     // Modal para detalhes dos membros
