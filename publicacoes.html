@@ -34,6 +34,7 @@
                     <li class="nav-item"><a class="nav-link active" href="publicacoes.html">Publicações</a></li>
                     <li class="nav-item"><a class="nav-link" href="equipe.html">Equipe</a></li>
                     <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="devs.html">Devs</a></li>
                 </ul>
             </div>
         </div>
@@ -50,158 +51,24 @@
     <!-- Conteúdo Principal -->
     <main class="py-5">
         <div class="container">
-            <!-- Filtros e Busca -->
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <div class="publication-filters">
-                        <button class="btn btn-filter active" data-filter="all">Todas</button>
-                        <button class="btn btn-filter" data-filter="ai">Inteligência Artificial</button>
-                        <button class="btn btn-filter" data-filter="seguranca">Segurança</button>
-                        <button class="btn btn-filter" data-filter="cloud">Computação em Nuvem</button>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="search-box">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Buscar publicações..." id="searchInput">
-                            <button class="btn btn-accent" type="button">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Estatísticas -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <h3>25+</h3>
-                            <p>Artigos Publicados</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>15+</h3>
-                            <p>Conferências Nacionais</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10+</h3>
-                            <p>Conferências Internacionais</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>5+</h3>
-                            <p>Prêmios e Menções</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Lista de Publicações -->
             <div class="publications-list">
-                <!-- Publicação 1 -->
-                <div class="publication-item" data-category="seguranca" data-year="2025">
+                <div class="publication-item" data-category="juridico" data-year="2025">
                     <div class="publication-header">
                         <span class="badge bg-accent">2025</span>
-                        <span class="badge bg-secondary">Segurança</span>
-                        <h4>Um Framework para Análise de Segurança em Aplicações Web</h4>
+                        <span class="badge bg-secondary">Gestão, Jurídicos e Financeiros</span>
+                        <h4>Intellectual Property and the Future of NFT Market</h4>
                     </div>
                     <div class="publication-authors">
-                        <span class="authors">Silva, J., Costa, M., Oliveira, R.</span>
-                        <span class="journal">Anais do Simpósio Brasileiro de Segurança da Informação</span>
+                        <span class="authors">Alessandro Aveni (UnB), Claudio Ulisse (IFB)</span>
+                        <span class="journal">Revista Processus de Estudos de Gestão, Jurídicos e Financeiros</span>
                     </div>
                     <div class="publication-abstract">
-                        <p>Este artigo apresenta um novo framework para a automação da análise de vulnerabilidades em aplicações web modernas. Com a crescente complexidade das tecnologias de front-end e back-end, métodos tradicionais de varredura se mostram insuficientes.</p>
+                        <p>Artigo discute o mercado de NFTs e as causas da crise, explorando questões legais relacionadas ao sistema de propriedade intelectual, regulamentações de IA e incertezas do mercado NFT.</p>
                     </div>
                     <div class="publication-actions">
-                        <a href="publicacao_detalhe.html" class="btn btn-sm btn-outline-primary">Detalhes</a>
-                        <a href="#" class="btn btn-sm btn-accent"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-github"></i> Código</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-link-45deg"></i> DOI</a>
+                        <a href="https://periodicos.processus.com.br/index.php/egjf/article/view/1342" target="_blank" class="btn btn-sm btn-accent">Ler Artigo Completo</a>
                     </div>
-                </div>
-
-                <!-- Publicação 2 -->
-                <div class="publication-item" data-category="cloud" data-year="2024">
-                    <div class="publication-header">
-                        <span class="badge bg-accent">2024</span>
-                        <span class="badge bg-secondary">Computação em Nuvem</span>
-                        <h4>Otimização de Custo em Microsserviços na Nuvem AWS</h4>
-                    </div>
-                    <div class="publication-authors">
-                        <span class="authors">Pereira, A., Souza, L., Santos, P.</span>
-                        <span class="journal">Revista Brasileira de Computação Aplicada</span>
-                    </div>
-                    <div class="publication-abstract">
-                        <p>Este trabalho propõe uma nova abordagem para otimização de custos em arquiteturas de microsserviços implantadas na nuvem AWS. Através de análise de padrões de uso e implementação de políticas de escalonamento automático, conseguimos reduzir custos em até 40%.</p>
-                    </div>
-                    <div class="publication-actions">
-                        <a href="#" class="btn btn-sm btn-outline-primary">Detalhes</a>
-                        <a href="#" class="btn btn-sm btn-accent"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-link-45deg"></i> DOI</a>
-                    </div>
-                </div>
-
-                <!-- Publicação 3 -->
-                <div class="publication-item" data-category="ai" data-year="2024">
-                    <div class="publication-header">
-                        <span class="badge bg-accent">2024</span>
-                        <span class="badge bg-secondary">Inteligência Artificial</span>
-                        <h4>Redes Neurais para Detecção de Anomalias em Séries Temporais</h4>
-                    </div>
-                    <div class="publication-authors">
-                        <span class="authors">Mendes, R., Lima, C., Alves, T.</span>
-                        <span class="journal">Conference on Machine Learning and Systems</span>
-                    </div>
-                    <div class="publication-abstract">
-                        <p>Apresentamos uma arquitetura inovadora de rede neural para detecção de anomalias em séries temporais de alta dimensionalidade. Nossa abordagem combina autoencoders variacionais com atenção multi-head para alcançar resultados state-of-the-art em diversos datasets benchmark.</p>
-                    </div>
-                    <div class="publication-actions">
-                        <a href="#" class="btn btn-sm btn-outline-primary">Detalhes</a>
-                        <a href="#" class="btn btn-sm btn-accent"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-github"></i> Código</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-link-45deg"></i> DOI</a>
-                    </div>
-                </div>
-
-                <!-- Publicação 4 - Modelo para replicar -->
-                <div class="publication-item" data-category="ai" data-year="2023">
-                    <div class="publication-header">
-                        <span class="badge bg-accent">2023</span>
-                        <span class="badge bg-secondary">Inteligência Artificial</span>
-                        <h4>Título da Publicação</h4>
-                    </div>
-                    <div class="publication-authors">
-                        <span class="authors">Autor1, A., Autor2, B., Autor3, C.</span>
-                        <span class="journal">Nome do Periódico ou Conferência</span>
-                    </div>
-                    <div class="publication-abstract">
-                        <p>Resumo da publicação. Descreva brevemente o conteúdo, objetivos, metodologia e resultados principais.</p>
-                    </div>
-                    <div class="publication-actions">
-                        <a href="#" class="btn btn-sm btn-outline-primary">Detalhes</a>
-                        <a href="#" class="btn btn-sm btn-accent"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-github"></i> Código</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-link-45deg"></i> DOI</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Paginação -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <nav aria-label="Navegação de páginas">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Próxima</a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
         </div>
