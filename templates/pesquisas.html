@@ -13,16 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/pesquisas.css">
-    <link rel="stylesheet" href="css/animacoes.css">
-    <link rel="icon" type="image/png" href="imagens/logos/GPTCODE-LOGO-BARRA.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pesquisas.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animacoes.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
                 <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,12 +30,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="pesquisas.html">Pesquisas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="equipe.html">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="devs.html">Devs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('pesquisas') }}">Pesquisas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('devs') }}">Devs</a></li>
                 </ul>
             </div>
         </div>
@@ -77,19 +77,19 @@
                                 </ul>
                                 <div class="research-meta">
                                     <div class="research-lead">
-                                        <img src="imagens/equipe/professor1.jpg" alt="Líder da pesquisa">
+                                        <img src="{{ url_for('static', filename='imagens/equipe/professor1.jpg') }}" alt="Líder da pesquisa">
                                         <div>
                                             <p>Líder da pesquisa</p>
                                             <h6>Dra. Ana Carolina Silva</h6>
                                         </div>
                                     </div>
-                                    <a href="publicacoes.html?area=ai" class="btn btn-outline-primary">Ver publicações</a>
+                                    <a href="{{ url_for('publicacoes') }}?area=ai" class="btn btn-outline-primary">Ver publicações</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="research-image">
-                                <img src="imagens/logos/Inteligência Artificial e Machine Learning - logo.png" alt="Inteligência Artificial" class="img-fluid rounded-3">
+                                <img src="{{ url_for('static', filename='imagens/logos/Inteligência Artificial e Machine Learning - logo.png') }}" alt="Inteligência Artificial" class="img-fluid rounded-3">
                             </div>
                         </div>
                     </div>
@@ -111,19 +111,19 @@
                                 </ul>
                                 <div class="research-meta">
                                     <div class="research-lead">
-                                        <img src="imagens/equipe/professor2.jpg" alt="Líder da pesquisa">
+                                        <img src="{{ url_for('static', filename='imagens/equipe/professor2.jpg') }}" alt="Líder da pesquisa">
                                         <div>
                                             <p>Líder da pesquisa</p>
                                             <h6>Prof. Carlos Eduardo</h6>
                                         </div>
                                     </div>
-                                    <a href="publicacoes.html?area=seguranca" class="btn btn-outline-primary">Ver publicações</a>
+                                    <a href="{{ url_for('publicacoes') }}?area=seguranca" class="btn btn-outline-primary">Ver publicações</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 order-lg-1">
                             <div class="research-image">
-                                <img src="imagens/logos/Segurança da Informação e Criptografia - logo.png" alt="Segurança da Informação" class="img-fluid rounded-3">
+                                <img src="{{ url_for('static', filename='imagens/logos/Segurança da Informação e Criptografia - logo.png') }}" alt="Segurança da Informação" class="img-fluid rounded-3">
                             </div>
                         </div>
                     </div>
@@ -145,19 +145,19 @@
                                 </ul>
                                 <div class="research-meta">
                                     <div class="research-lead">
-                                        <img src="https://via.placeholder.com/80x80.png?text=Foto" alt="Líder da pesquisa">
+                                        <img src="https://via.placeholder.com/80x80.png?text=Foto" alt="Líder da pesquisa"> <!-- Placeholder, pode ser atualizado -->
                                         <div>
                                             <p>Líder da pesquisa</p>
                                             <h6>Prof. Roberto Almeida</h6>
                                         </div>
                                     </div>
-                                    <a href="publicacoes.html?area=cloud" class="btn btn-outline-primary">Ver publicações</a>
+                                    <a href="{{ url_for('publicacoes') }}?area=cloud" class="btn btn-outline-primary">Ver publicações</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="research-image">
-                                <img src="imagens/logos/Intellectual Property and the Future of NFT Market - logo.png" alt="Computação em Nuvem" class="img-fluid rounded-3">
+                                <img src="{{ url_for('static', filename='imagens/logos/Intellectual Property and the Future of NFT Market - logo.png') }}" alt="Computação em Nuvem" class="img-fluid rounded-3">
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                     <div class="cta-box p-5 rounded-3">
                         <h3>Interessado em nossas pesquisas?</h3>
                         <p class="mb-4">Tem uma ideia de projeto ou quer colaborar conosco? Entre em contato para conversarmos sobre possibilidades de parceria.</p>
-                        <a href="devs.html" class="btn btn-accent btn-lg">Entre em contato</a>
+                        <a href="{{ url_for('contato') }}" class="btn btn-accent btn-lg">Entre em contato</a>
                     </div>
                 </div>
             </div>
@@ -211,6 +211,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/pesquisas.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pesquisas.js') }}"></script>
 </body>
 </html>

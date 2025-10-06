@@ -13,16 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/equipe.css">
-    <link rel="stylesheet" href="css/animacoes.css">
-    <link rel="icon" type="image/png" href="imagens/logos/GPTCODE-LOGO-BARRA.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/equipe.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animacoes.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
                 <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,12 +30,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pesquisas.html">Pesquisas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="equipe.html">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="devs.html">Devs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('equipe') }}">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('devs') }}">Devs</a></li>
                 </ul>
             </div>
         </div>
@@ -63,7 +62,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/professores/Dauster.jpeg" class="member-img" alt="Professor Dauster Souza Pereira">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/Dauster.jpeg') }}" class="member-img" alt="Professor Dauster Souza Pereira">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/usuario" target="_blank"><i class="bi bi-github"></i></a>
@@ -87,7 +86,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/professores/claudio.jpeg" class="member-img" alt="Professor Claudio Ulisse">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/claudio.jpeg') }}" class="member-img" alt="Professor Claudio Ulisse">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/claulis/"><i class="bi bi-github"></i></a>
@@ -115,7 +114,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/professores/Fernando Wagner.jpeg" class="member-img" alt="Professor Fernando Wagner Brito Hortêncio Filho">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/Fernando Wagner.jpeg') }}" class="member-img" alt="Professor Fernando Wagner Brito Hortêncio Filho">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="#"><i class="bi bi-github"></i></a>
@@ -143,7 +142,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/professores/Sylvana.jpeg" class="member-img" alt="Professora Sylvana Karla da Silva de Lemos Santos">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/Sylvana.jpeg') }}" class="member-img" alt="Professora Sylvana Karla da Silva de Lemos Santos">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="#"><i class="bi bi-github"></i></a>
@@ -176,7 +175,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/gabriel.azevedo.jpeg" class="member-img" alt="Gabriel Azevedo Marques">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/gabriel.azevedo.jpeg') }}" class="member-img" alt="Gabriel Azevedo Marques">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/SkyWallker616"><i class="bi bi-github"></i></a>
@@ -200,7 +199,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Davi.png" class="member-img" alt="Davi Rocha Fortes Bezerra">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi.png') }}" class="member-img" alt="Davi Rocha Fortes Bezerra">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/davirfb"><i class="bi bi-github"></i></a>
@@ -224,7 +223,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Alice Alves da Gama.jpeg" class="member-img" alt="Alice Alves da Gama">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Alice Alves da Gama.jpeg') }}" class="member-img" alt="Alice Alves da Gama">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/AliceAlvesG" target="_blank"><i class="bi bi-github"></i></a>
@@ -248,7 +247,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Luidy Baldez.jpeg" class="member-img" alt="Luidy Baldez de Melo">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Luidy Baldez.jpeg') }}" class="member-img" alt="Luidy Baldez de Melo">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/lBALDEZl" target="_blank"><i class="bi bi-github"></i></a>
@@ -272,7 +271,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Davi Campos Parente.jpeg" class="member-img" alt="Davi Campos Parente">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi Campos Parente.jpeg') }}" class="member-img" alt="Davi Campos Parente">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/DaviParente10" target="_blank"><i class="bi bi-github"></i></a>
@@ -296,7 +295,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Eduardo Rodrigues Estrela.jpeg" class="member-img" alt="Eduardo Rodrigues Estrela">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Eduardo Rodrigues Estrela.jpeg') }}" class="member-img" alt="Eduardo Rodrigues Estrela">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/EduardoStarZ" target="_blank"><i class="bi bi-github"></i></a>
@@ -320,7 +319,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Gabriel Gonçalves dos Santos Silva.jpeg" class="member-img" alt="Gabriel Gonçalves dos Santos Silva">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Gabriel Gonçalves dos Santos Silva.jpeg') }}" class="member-img" alt="Gabriel Gonçalves dos Santos Silva">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/Gabriel25484" target="_blank"><i class="bi bi-github"></i></a>
@@ -344,7 +343,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Ivanilson Paixão Cirqueira.jpeg" class="member-img" alt="Ivanilson Paixão Cirqueira">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Ivanilson Paixão Cirqueira.jpeg') }}" class="member-img" alt="Ivanilson Paixão Cirqueira">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/ivanilsonstfler" target="_blank"><i class="bi bi-github"></i></a>
@@ -368,7 +367,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Leandro Souza Rocha.jpeg" class="member-img" alt="Leandro Souza Rocha">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Leandro Souza Rocha.jpeg') }}" class="member-img" alt="Leandro Souza Rocha">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/Leandrorocha17" target="_blank"><i class="bi bi-github"></i></a>
@@ -392,7 +391,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Mateus Nascimento Aires.jpeg" class="member-img" alt="Mateus Nascimento Aires">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Mateus Nascimento Aires.jpeg') }}" class="member-img" alt="Mateus Nascimento Aires">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/mateuaires" target="_blank"><i class="bi bi-github"></i></a>
@@ -416,7 +415,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Mayara Vieira Martins Santos.png" class="member-img" alt="Mayara Vieira Martins Santos">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Mayara Vieira Martins Santos.png') }}" class="member-img" alt="Mayara Vieira Martins Santos">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/MayaraVieiraa" target="_blank"><i class="bi bi-github"></i></a>
@@ -440,7 +439,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Sávio Vinícius de Sousa.jpg" class="member-img" alt="Sávio Vinícius de Sousa">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Sávio Vinícius de Sousa.jpg') }}" class="member-img" alt="Sávio Vinícius de Sousa">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/savifb" target="_blank"><i class="bi bi-github"></i></a>
@@ -464,7 +463,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/graduacao/Vitória Santana Silva.jpg" class="member-img" alt="Vitória Santana Silva">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Vitória Santana Silva.jpg') }}" class="member-img" alt="Vitória Santana Silva">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/VII-Z" target="_blank"><i class="bi bi-github"></i></a>
@@ -504,7 +503,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Andersen Gonzaga Facundo.jpeg" class="member-img" alt="Andersen Gonzaga Facundo">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Andersen Gonzaga Facundo.jpeg') }}" class="member-img" alt="Andersen Gonzaga Facundo">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="hhttps://github.com/andersengf" target="_blank"><i class="bi bi-github"></i></a>
@@ -520,7 +519,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Anderson de Castro Gomes.png" class="member-img" alt="Anderson de Castro Gomes">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Anderson de Castro Gomes.png') }}" class="member-img" alt="Anderson de Castro Gomes">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/AndersonCastroGomes" target="_blank"><i class="bi bi-github"></i></a>
@@ -536,7 +535,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Edilson Nery Barbosa.png" class="member-img" alt="Edilson Nery Barbosa">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Edilson Nery Barbosa.png') }}" class="member-img" alt="Edilson Nery Barbosa">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/edilsonnerybarbosa" target="_blank"><i class="bi bi-github"></i></a>
@@ -552,7 +551,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Fernando Fábio Inocêncio Cavalcante.jpeg" class="member-img" alt="Fernando Fábio Inocêncio Cavalcante">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Fernando Fábio Inocêncio Cavalcante.jpeg') }}" class="member-img" alt="Fernando Fábio Inocêncio Cavalcante">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="https://github.com/FernandoFIC" target="_blank"><i class="bi bi-github"></i></a>
@@ -621,6 +620,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/equipe.js"></script>
+    <script src="{{ url_for('static', filename='js/equipe.js') }}"></script>
 </body>
 </html>

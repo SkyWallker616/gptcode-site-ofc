@@ -144,72 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Formulário de contato
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Coletar dados do formulário
-            const formData = new FormData(this);
-            const data = {
-                nome: formData.get('nome'),
-                email: formData.get('email'),
-                telefone: formData.get('telefone'),
-                assunto: formData.get('assunto'),
-                mensagem: formData.get('mensagem')
-            };
-            
-            // Simular envio (em produção, seria enviado para um servidor)
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            // Mostrar loading
-            submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Enviando...';
-            submitBtn.disabled = true;
-            
-            // Simular delay de envio
-            setTimeout(() => {
-                // Criar email mailto (solução temporária)
-                const subject = `[GPTCode] ${data.assunto} - ${data.nome}`;
-                const body = `Nome: ${data.nome}%0D%0A` +
-                           `Email: ${data.email}%0D%0A` +
-                           `Telefone: ${data.telefone || 'Não informado'}%0D%0A` +
-                           `Assunto: ${data.assunto}%0D%0A%0D%0A` +
-                           `Mensagem:%0D%0A${data.mensagem}`;
-                
-                const mailtoLink = `mailto:dauster.pereira@ifb.edu.br?subject=${encodeURIComponent(subject)}&body=${body}`;
-                
-                // Abrir cliente de email
-                window.location.href = mailtoLink;
-                
-                // Mostrar mensagem de sucesso
-                document.getElementById('successMessage').style.display = 'block';
-                document.getElementById('errorMessage').style.display = 'none';
-                
-                // Limpar formulário
-                contactForm.reset();
-                
-                // Restaurar botão
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Esconder mensagem após 5 segundos
-                setTimeout(() => {
-                    document.getElementById('successMessage').style.display = 'none';
-                }, 5000);
-                
-            }, 1500);
-        });
+        // A lógica de envio do formulário agora é tratada pelo backend Flask.
+        // O JavaScript não precisa mais interceptar o evento de 'submit'.
+        // A mensagem de sucesso é renderizada pelo Jinja2 no template.
+        // Podemos manter este bloco para futuras interações de front-end, se necessário.
     }
-    
-    // Força o favicon dinamicamente
-    (function() {
-        const faviconUrl = "imagens/logos/GPTCODE-LOGO-BARRA.png";
-        let link = document.querySelector("link[rel~='icon']");
-        if (!link) {
-            link = document.createElement('link');
-            link.rel = 'icon';
-            document.head.appendChild(link);
-        }
-        link.type = "image/png";
-        link.href = faviconUrl;
-    })();
 });

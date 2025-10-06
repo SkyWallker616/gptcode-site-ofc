@@ -13,15 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/publicacoes.css">
-    <link rel="icon" type="image/png" href="imagens/logos/GPTCODE-LOGO-BARRA.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/publicacoes.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
 </head>
 <body class="bg-light">
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top navbar-scrolled">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
                 <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pesquisas.html">Pesquisas</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="publicacoes.html">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="equipe.html">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="devs.html">Devs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('publicacoes') }}">Publicações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('devs') }}">Devs</a></li>
                 </ul>
             </div>
         </div>
@@ -45,8 +44,8 @@
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="mb-4">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
-                <li class="breadcrumb-item"><a href="publicacoes.html">Publicações</a></li>
+                <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Início</a></li>
+                <li class="breadcrumb-item"><a href="{{ url_for('publicacoes') }}">Publicações</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detalhes do Artigo</li>
             </ol>
         </nav>

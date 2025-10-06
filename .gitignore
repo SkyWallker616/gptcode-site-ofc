@@ -1,0 +1,12 @@
+# Pasta do Ambiente Virtual
+venv/
+.venv/
+
+# Arquivo de variáveis de ambiente (contém senhas!)
+.env
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

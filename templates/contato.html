@@ -13,15 +13,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animacoes.css">
-    <link rel="icon" type="image/png" href="imagens/logos/GPTCODE-LOGO-BARRA.png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animacoes.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
                 <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pesquisas.html">Pesquisas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="publicacoes.html">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="equipe.html">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="devs.html">Devs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('contato') }}">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('devs') }}">Devs</a></li>
                 </ul>
             </div>
         </div>
@@ -92,7 +91,7 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="contact-form-container">
                         <h3 class="text-center mb-4">Envie sua Mensagem</h3>
-                        <form id="contactForm" class="contact-form">
+                        <form id="contactForm" class="contact-form" method="POST" action="{{ url_for('contato') }}">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="nome" class="form-label">Nome Completo *</label>
@@ -137,17 +136,16 @@
                             </div>
                         </form>
                         
-                        <!-- Mensagem de sucesso -->
-                        <div id="successMessage" class="alert alert-success mt-4" style="display: none;">
-                            <i class="bi bi-check-circle me-2"></i>
-                            Mensagem enviada com sucesso! Entraremos em contato em breve.
-                        </div>
-                        
-                        <!-- Mensagem de erro -->
-                        <div id="errorMessage" class="alert alert-danger mt-4" style="display: none;">
-                            <i class="bi bi-exclamation-triangle me-2"></i>
-                            Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente.
-                        </div>
+                        <!-- Mensagens Flash (sucesso, erro, etc.) -->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                          {% if messages %}
+                            {% for category, message in messages %}
+                              <div class="alert alert-{{ category }} mt-4" role="alert">
+                                <i class="bi bi-info-circle-fill me-2"></i>{{ message }}
+                              </div>
+                            {% endfor %}
+                          {% endif %}
+                        {% endwith %}
                     </div>
                 </div>
             </div>
@@ -235,6 +233,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
