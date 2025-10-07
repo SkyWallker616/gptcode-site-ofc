@@ -210,6 +210,82 @@ body {
     transform: translateY(-3px);
 }
 
+/* Botões com animações em amarelo */
+.btn-warning {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #fff; /* Letras brancas */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-warning:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+.btn-outline-warning {
+    border-color: #ffcc00;
+    color: #ffcc00;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffcc00;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Navbar animações em amarelo */
+#navbar {
+    background-color: white;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#navbar:hover {
+    background-color: #ffcc00; /* Amarelo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Amarelo */
+    border-bottom: 2px solid #ffcc00; /* Linha amarela ao passar o mouse */
+}
+
+/* Navbar animações */
+#navbar {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#navbar:hover {
+    background-color: #ffcc00; /* Amarelo */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #ffcc00; /* Amarelo */
+}
+
+.navbar-brand img {
+    transition: transform 0.3s;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
 /* Ajustes para mobile */
 @media (max-width: 576px) {
     .hero-buttons {
@@ -225,6 +301,18 @@ body {
     
     .hero h1 {
         font-size: 2.2rem;
+    }
+}
+
+/* Ajustes para a seção "Quem Somos" */
+@media (max-width: 768px) {
+    .quem-somos-buttons {
+        justify-content: center;
+    }
+
+    .quem-somos-buttons .btn {
+        width: 100%; /* Botões ocupam toda a largura em telas menores */
+        text-align: center;
     }
 }
 
@@ -659,74 +747,81 @@ footer .btn, footer .social-link {
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 0.6rem 0;
-    }
-    
-    .navbar-brand {
-        font-size: 1.6rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .section-padding {
-        padding: 3rem 0;
-    }
-    
-    .social-links {
-        justify-content: center;
-        margin-top: 1.5rem;
-    }
-    
-    .social-link {
-        width: 55px;
-        height: 55px;
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand {
-        font-size: 1.4rem;
-    }
-    
-    .navbar-toggler {
-        padding: 0.3rem 0.5rem;
-    }
-    
-    .quem-somos-buttons,
-    .quem-somos .btn-group,
-    .quem-somos .d-flex {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 1rem !important;
-    }
-    .quem-somos .btn,
-    .quem-somos-buttons .btn {
-        width: 100% !important;
-        margin: 0 !important;
-    }
-}
-
-/* Ajustes para scroll suave */
-html {
-    scroll-behavior: smooth;
-}
-
-#sobre, #contato {
-    scroll-margin-top: 80px;
-}
-
-@media (max-width: 767px) {
-    .row.align-items-center.g-0.shadow.rounded-4.bg-white.p-4 {
-        flex-direction: column !important;
+    .navbar-nav {
         text-align: center;
     }
-    .row.align-items-center.g-0.shadow.rounded-4.bg-white.p-4 .col-md-5,
-    .row.align-items-center.g-0.shadow.rounded-4.bg-white.p-4 .col-md-7 {
-        width: 100%;
-        max-width: 100%;
+
+    .navbar-brand img {
+        height: 40px; /* Reduzir o tamanho do logo */
     }
+
+    .hero {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn {
+        margin-bottom: 1rem;
+    }
+
+    .team-member .member-info {
+        text-align: center;
+    }
+
+    .team-member .member-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer-brand {
+        font-size: 1.5rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 576px) {
+    .page-header {
+        padding: 3rem 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .contact-info-card {
+        margin-bottom: 2rem;
+    }
+
+    .contact-form .form-control {
+        font-size: 0.9rem;
+    }
+
+    .contact-form button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para tabelas e listas */
+.table-responsive {
+    overflow-x: auto;
+}
+
+ul {
+    padding-left: 1.5rem;
 }

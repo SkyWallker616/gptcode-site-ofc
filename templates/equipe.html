@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/equipe.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animacoes.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}" sizes="128x128">
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
+                <img src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}" alt="GPTCode Icon" style="height: 50px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,6 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
                     <li class="nav-item"><a class="nav-link active" href="{{ url_for('equipe') }}">Equipe</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
@@ -56,7 +57,7 @@
             <div class="team-cascade">
                 <!-- Professores -->
                 <div class="team-category" id="professores">
-                    <h2 class="category-title">Professores e Orientadores</h2>
+                    <h2 class="category-title">Professores Pesquisadores</h2>
                     <div class="row">
                         <!-- Professor Dauster -->
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
@@ -97,7 +98,7 @@
                                     </div>
                                 </div>
                                 <div class="member-info">
-                                    <h5 class="member-name">Prof. Claudio Ulisse</h5>
+                                    <h5 class="member-name">Prof. Me. Claudio Ulisse</h5>
                                     <p class="member-role">Orientador</p>
                                     <p class="member-desc">Professor de Ciência da Computação com Bacharelado em Sistemas de Informação. Mestre em Propriedade Intelectual e Transferência de Tecnologia para Inovação. Analista de sistemas e desenvolvedor web experiente, com expertise em integração de sistemas e arquitetura distribuída.</p>
                                     <div class="member-tags">
@@ -503,7 +504,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
                             <div class="member-card">
                                 <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Andersen Gonzaga Facundo.jpeg') }}" class="member-img" alt="Andersen Gonzaga Facundo">
+                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores/Andersen Gonzaga Facundo.jpeg') }}" class="member-img" alt="Andersen Gonzaga Facundo">
                                     <div class="member-overlay">
                                         <div class="member-social">
                                             <a href="hhttps://github.com/andersengf" target="_blank"><i class="bi bi-github"></i></a>
@@ -598,8 +599,7 @@
                 <div class="col-lg-4 mb-4">
                     <h5>Contato</h5>
                     <p><i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D, E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G - Asa Norte, Brasília - DF, 70830-450</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:dauster.pereira@ifb.edu.br">dauster.pereira@ifb.edu.br</a></p>
-                    <p><i class="bi bi-telephone-fill me-2"></i> (61) 99508-8888</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <h5>Conecte-se</h5>

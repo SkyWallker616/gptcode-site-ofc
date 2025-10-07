@@ -15,14 +15,14 @@
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/publicacoes.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}" sizes="32x32">
 </head>
 <body class="bg-light">
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top navbar-scrolled">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
+                <img src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}" alt="GPTCode Icon" style="height: 50px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,6 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link active" href="{{ url_for('publicacoes') }}">Publicações</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
@@ -41,21 +42,21 @@
 
     <!-- Conteúdo Principal -->
     <main class="container" style="padding-top: 100px;">
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="mb-4">
+        <!-- Remover a barra de navegação -->
+        <!-- <nav aria-label="breadcrumb" class="mb-4">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Início</a></li>
                 <li class="breadcrumb-item"><a href="{{ url_for('publicacoes') }}">Publicações</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detalhes do Artigo</li>
             </ol>
-        </nav>
+        </nav> -->
 
         <div class="row mt-4">
             <!-- Conteúdo Principal -->
             <div class="col-lg-8">
                 <article class="publication-detail">
                     <header class="mb-4">
-                        <h1 class="article-title">Intellectual Property and the Future of NFT Market</h1>
+                        <h1 class="article-title">Uso de Realidade Aumentada na conscientização do tabagismo</h1>
                         <div class="publication-meta">
                             <span class="authors">Alessandro Aveni (UnB), Claudio Ulisse (IFB)</span>
                             <span class="journal">Revista Processus de Estudos de Gestão, Jurídicos e Financeiros, 2025</span>
@@ -68,7 +69,7 @@
                     <section class="mb-5">
                         <h3 class="section-subtitle">Como Citar</h3>
                         <div class="citation-box">
-                            <p class="mb-0">AVENI, A.; ULISSE, C. Intellectual Property and the Future of NFT Market. Revista Processus de Estudos de Gestão, Jurídicos e Financeiros, 2025.</p>
+                            <p class="mb-0">AVENI, A.; ULISSE, C. Uso de Realidade Aumentada na conscientização do tabagismo. Revista Processus de Estudos de Gestão, Jurídicos e Financeiros, 2025.</p>
                         </div>
                     </section>
                 </article>
@@ -104,8 +105,7 @@
                 <div class="col-lg-4 mb-4">
                     <h5>Contato</h5>
                     <p><i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D, E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G - Asa Norte, Brasília - DF, 70830-450</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:dauster.pereira@ifb.edu.br">dauster.pereira@ifb.edu.br</a></p>
-                    <p><i class="bi bi-telephone-fill me-2"></i> (61) 99508-8888</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <h5>Conecte-se</h5>

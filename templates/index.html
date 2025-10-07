@@ -15,21 +15,22 @@
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/animacoes.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}" sizes="128x128">
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
         <div class="container">
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <span class="brand-text">GPT</span><span class="brand-accent">Code</span>
+                <img src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}" alt="GPTCode Icon" style="height: 50px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
@@ -45,8 +46,8 @@
             <h1 class="display-3 text-white fw-bold mb-4">Grupo de Pesquisa em Tecnologias Computacionais</h1>
             <p class="lead text-white-50 my-4">Desenvolvendo o futuro com código e inovação no Instituto Federal de Brasília.</p>
             <div class="hero-buttons">
-                <a href="#sobre" class="btn btn-accent btn-lg">Conheça o Grupo</a>
-                <a href="{{ url_for('contato') }}" class="btn btn-outline-light btn-lg">Entre em Contato</a>
+                <a href="{{ url_for('equipe') }}" class="btn btn-accent btn-lg text-white">Conheça o Grupo</a>
+                <a href="{{ url_for('contato') }}" class="btn btn-outline-warning btn-lg rounded-pill">Entre em Contato</a>
             </div>
         </div>
     </header>
@@ -57,11 +58,11 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h2 class="section-title">Quem Somos</h2>
-                    <p class="lead">O GPTCode é um grupo de pesquisa do Instituto Federal de Brasília (IFB) dedicado à investigação e ao desenvolvimento de technologies computacionais de ponta.</p>
-                    <p>Nossa missão é criar soluções inovadoras que abordem problemas complexos e contribuam para o avanço científico e tecnológico da sociedade. Atuamos em diversas áreas, sempre buscando a sinergia entre teoria e prática.</p>
-                    <div class="quem-somos-buttons d-flex gap-3 mt-4">
-                        <a href="{{ url_for('equipe') }}" class="btn btn-outline-primary">Conheça nossa equipe</a>
-                        <a href="{{ url_for('publicacoes') }}" class="btn btn-primary">Nossas publicações</a>
+                    <p class="lead">O GPTCode é um grupo de pesquisa do Instituto Federal de Educação, Ciência e Tecnologia de Brasília (IFB) dedicado ao desenvolvimento de tecnologias computacionais.</p>
+                    <p>Nossa missão é criar soluções que abordem problemas complexos e contribuam para o avanço científico e tecnológico da sociedade.</p>
+                    <div class="quem-somos-buttons d-flex flex-wrap gap-3 mt-4">
+                        <a href="{{ url_for('equipe') }}" class="btn btn-outline-warning">Conheça nossa equipe</a>
+                        <a href="{{ url_for('publicacoes') }}" class="btn btn-warning">Nossas publicações</a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
@@ -82,7 +83,7 @@
                          style="max-width: 90%; max-height: 350px; object-fit: contain;">
                 </div>
                 <div class="col-md-7">
-                    <h3 class="fw-bold mb-2">Intellectual Property and the Future of NFT Market</h3>
+                    <h3 class="fw-bold mb-2">Uso de Realidade Aumentada na conscientização do tabagismo</h3>
                     <p class="mb-1"><strong>Autores:</strong> Alessandro Aveni (UnB) e Claudio Ulisse (IFB)</p>
                     <p>
                         Artigo discute o mercado de NFTs e as causas da crise, explorando questões legais relacionadas ao sistema de propriedade intelectual, regulamentações de IA e incertezas do mercado NFT.
@@ -105,10 +106,14 @@
             <h2 class="section-title text-center mb-5">Parceiros e Apoiadores</h2>
             <div class="row justify-content-center">
                 <div class="col-md-4 text-center mb-4">
-                    <img src="{{ url_for('static', filename='imagens/logos/Instituto_Federal_de_Brasília.png') }}" class="img-fluid partner-logo" alt="IFB Logo">
+                    <a href="https://www.ifb.edu.br" target="_blank">
+                        <img src="{{ url_for('static', filename='imagens/logos/Instituto_Federal_de_Brasília.png') }}" class="img-fluid partner-logo" alt="IFB Logo">
+                    </a>
                 </div>
                 <div class="col-md-4 text-center mb-4">
-                    <img src="{{ url_for('static', filename='imagens/logos/cnpq-icon.png') }}" class="img-fluid partner-logo" alt="CNPq Logo">
+                    <a href="https://www.gov.br/cnpq" target="_blank">
+                        <img src="{{ url_for('static', filename='imagens/logos/cnpq-icon.png') }}" class="img-fluid partner-logo" alt="CNPq Logo">
+                    </a>
                 </div>
             </div>
         </div>
@@ -126,8 +131,7 @@
                 <div class="col-lg-4 mb-4">
                     <h5>Contato</h5>
                     <p><i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D, E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G - Asa Norte, Brasília - DF, 70830-450</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:dauster.pereira@ifb.edu.br">dauster.pereira@ifb.edu.br</a></p>
-                    <p><i class="bi bi-telephone-fill me-2"></i> (61) 99508-8888</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <h5>Conecte-se</h5>

@@ -1,0 +1,139 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar */
+#navbar {
+    padding: 15px 0;
+    transition: background-color 0.3s;
+}
+
+.navbar-brand img {
+    height: 50px;
+    transition: transform 0.3s;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('../imagens/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+/* Botões */
+.btn-accent {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #fff; /* Letras brancas */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-accent:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Botão "Entre em Contato" */
+.btn-warning {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+    color: #fff; /* Letras brancas */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-warning:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+.btn-outline-warning {
+    border: 2px solid #ffcc00; /* Borda amarela */
+    color: #ffcc00; /* Letras amarelas */
+    background-color: transparent; /* Fundo transparente */
+    border-radius: 50px; /* Bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffcc00; /* Fundo amarelo ao passar o mouse */
+    color: #fff; /* Letras brancas */
+    transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+/* Footer */
+#contato {
+    background-color: #343a40;
+    color: white;
+    padding: 60px 0;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.25rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #ffcc00;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}

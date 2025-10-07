@@ -84,6 +84,10 @@ def publicacoes():
 def devs():
     return render_template('devs.html')
 
+@app.route('/projetos')
+def projetos():
+    return render_template('projetos.html')
+
 # Rota de exemplo para detalhes da publicação
 @app.route('/publicacao/<int:pub_id>')
 def publicacao_detalhe(pub_id):
