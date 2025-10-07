@@ -162,4 +162,19 @@ document.addEventListener('DOMContentLoaded', function() {
         link.type = "image/png";
         link.href = faviconUrl;
     })();
+    
+    // Ativar animações quando os elementos entram na viewport
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+        revealElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                element.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
 });

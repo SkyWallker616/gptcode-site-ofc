@@ -1,7 +1,9 @@
 :root {
     --dark-blue: #0B193E;
     --medium-blue: #427AA1;
-    --accent-gold: #EEB831;
+    /* accent gold: adjusted to a slightly cooler/muted mustard for better contrast */
+    --accent-gold: #D4B24A;
+    --accent-gold-dark: #b7952f;
     --light-blue: #A5C9E0;
     --light-text: #f8f9fa;
     --dark-text: #212529;
@@ -54,6 +56,7 @@ body {
 
 /* Navbar */
 .navbar {
+    font-family: 'Poppins', sans-serif; /* Fonte padrão do site */
     transition: all 0.3s ease-in-out;
     padding: 0.8rem 0;
     background-color: rgba(11, 25, 62, 0.95);
@@ -162,7 +165,6 @@ body {
     opacity: 0.1;
 }
 
-/* Estilos para os botões do hero */
 .hero-buttons {
     margin-top: 2rem;
     display: flex;
@@ -186,10 +188,10 @@ body {
 }
 
 .btn-accent:hover {
-    background-color: #e0a825;
+    background-color: var(--accent-gold-dark);
     color: var(--dark-blue);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(238, 184, 49, 0.3);
+    box-shadow: 0 10px 20px rgba(183,149,47,0.18);
 }
 
 .btn-outline-light {
@@ -212,38 +214,38 @@ body {
 
 /* Botões com animações em amarelo */
 .btn-warning {
-    background-color: #ffcc00;
-    border-color: #ffcc00;
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
     color: #fff; /* Letras brancas */
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn-warning:hover {
-    background-color: #e6b800;
+    background-color: var(--accent-gold-dark);
     transform: scale(1.05);
 }
 
 .btn-outline-warning {
-    border-color: #ffcc00;
-    color: #ffcc00;
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .btn-outline-warning:hover {
-    background-color: #ffcc00;
+    background-color: var(--accent-gold);
     color: #fff;
     transform: scale(1.05);
 }
 
-/* Navbar animações em amarelo */
+/* Navbar accent color */
 #navbar {
     background-color: white;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #navbar:hover {
-    background-color: #ffcc00; /* Amarelo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-gold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .nav-link {
@@ -253,20 +255,57 @@ body {
 }
 
 .nav-link:hover {
-    color: #ffcc00; /* Amarelo */
-    border-bottom: 2px solid #ffcc00; /* Linha amarela ao passar o mouse */
+    color: var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* Ajuste da fonte e visibilidade da navbar */
+.navbar {
+    font-family: 'Poppins', sans-serif; /* Fonte padrão do site */
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a {
+    color: var(--dark-blue);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--accent-gold);
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    .navbar {
+        background-color: var(--medium-blue); /* Fundo azul ao clicar */
+    }
+
+    .navbar a {
+        color: white; /* Letras mais visíveis */
+        font-weight: bold;
+    }
+
+    .navbar-toggler {
+        border-color: white;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
 }
 
 /* Navbar animações */
 #navbar {
     background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #navbar:hover {
-    background-color: #ffcc00; /* Amarelo */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-gold);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.06);
 }
 
 .nav-link {
@@ -275,7 +314,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #ffcc00; /* Amarelo */
+    color: var(--accent-gold);
 }
 
 .navbar-brand img {
@@ -379,17 +418,18 @@ body {
 
 /* Publication Cards */
 .publication-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    background: #ffffff; /* make cards white to contrast on light background */
+    border-radius: 12px;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    transition: all 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.25s ease;
+    border: 1px solid rgba(34,41,47,0.06);
+    box-shadow: 0 8px 22px rgba(16,24,32,0.06);
 }
 
 .publication-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(16,24,32,0.09);
 }
 
 .publication-header {
@@ -441,10 +481,11 @@ body {
 
 /* Contact Form */
 .contact-form-container {
-    background: white;
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 14px;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(34,41,47,0.06);
+    box-shadow: 0 12px 30px rgba(16,24,32,0.06);
 }
 
 .contact-form .form-label {
@@ -477,24 +518,25 @@ body {
 
 /* Contact Page Specific */
 .contact-info-card {
-    background: white;
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s;
+    border: 1px solid rgba(34,41,47,0.06);
+    box-shadow: 0 8px 26px rgba(16,24,32,0.06);
+    transition: all 0.25s ease;
     height: 100%;
 }
 
 .contact-info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(16,24,32,0.09);
 }
 
 .contact-icon {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-gold), #f4c430);
+    background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -523,9 +565,8 @@ body {
 }
 
 .info-section {
-    background: var(--light-blue);
-    background: linear-gradient(135deg, rgba(165, 201, 224, 0.1), rgba(66, 122, 161, 0.1));
-    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(165, 201, 224, 0.05), rgba(66, 122, 161, 0.03));
+    border-radius: 12px;
     padding: 3rem 2rem;
 }
 
@@ -541,7 +582,7 @@ body {
 /* Partners */
 .partner-logo {
     filter: grayscale(100%);
-    opacity: 0.7;
+    opacity: 0.75;
     transition: all 0.3s;
 }
 
@@ -693,12 +734,13 @@ footer .btn, footer .social-link {
 
 /* Page Header */
 .page-header {
-    height: 40vh;
-    min-height: 300px;
+    height: 50vh;
+    min-height: 360px;
     background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
     position: relative;
     overflow: hidden;
-    margin-top: 76px;
+    margin-top: 0; /* keep header full-bleed behind navbar */
+    width: 100%;
 }
 
 .page-header::before {
@@ -716,6 +758,26 @@ footer .btn, footer .social-link {
 .page-header {
     margin-bottom: 0 !important;
     border-bottom: none !important;
+}
+
+/* Make header background cover full viewport width for pages like contato */
+.page-header.full-bleed {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+}
+
+/* Ajuste para faixa de contato */
+.page-header {
+    width: 100%;
+    margin: 0;
+    padding: 2rem 0;
+    background-color: var(--dark-blue);
+    color: white;
+    text-align: center;
 }
 
 /* Responsividade */
@@ -825,3 +887,169 @@ footer .btn, footer .social-link {
 ul {
     padding-left: 1.5rem;
 }
+
+/* Merged additions from templates/main.css (kept minimal and non-conflicting) */
+
+/* Page background from templates/main.css */
+body {
+    /* keep existing font-family and color from above; only set background color from templates */
+    background-color: #f8f9fa;
+}
+
+/* Utility container used across templates */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar small tweaks from templates to keep spacing consistent */
+#navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffcc00;
+}
+
+/* Ensure button variants keep the rounded style from templates where applicable */
+    .btn-outline-warning {
+    border: 2px solid var(--accent-gold); /* reinforce border */
+    color: var(--accent-gold);
+    background-color: transparent;
+    border-radius: 50px; /* keep the templates rounded style */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Footer contact area: azul escuro conforme imagem */
+#contato {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, #27384f 100%); /* azul escuro gradiente */
+    color: var(--light-text);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* preserve subtle pattern overlay similar ao design original */
+#contato::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.bg-dark-blue {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, #27384f 100%);
+    color: var(--light-text) !important;
+}
+
+/* Footer refinements to match the design in the provided image */
+footer#contato .container {
+    max-width: 1200px;
+}
+
+footer#contato .footer-brand {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+footer#contato h5 {
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+footer#contato p, footer#contato a {
+    color: rgba(255,255,255,0.85);
+}
+
+footer#contato .social-links {
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+footer#contato .social-link {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.25s ease;
+}
+
+footer#contato .social-link i {
+    color: var(--light-text) !important;
+    font-size: 1.2rem;
+}
+
+footer#contato .social-link:hover {
+    background: rgba(238,184,49,0.12);
+    border-color: rgba(238,184,49,0.2);
+    transform: translateY(-3px);
+}
+
+footer#contato hr {
+    border-color: rgba(255,255,255,0.06);
+}
+
+footer#contato .text-center p.small {
+    color: rgba(255,255,255,0.6);
+}
+
+/* Make the footer visually taller on large screens */
+@media (min-width: 992px) {
+    footer#contato { padding: 80px 0; }
+}
+
+/* Simple fade-in animation used by some pages */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Minimal fade-in-up animation used on devs page */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* gentle floating effect for avatars */
+@keyframes floaty {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+.avatar-float {
+    animation: floaty 4s ease-in-out infinite;
+}
+
+/* small lift on hover for cards */
+.card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,32,0.09); }
+
+/* End merged additions */
