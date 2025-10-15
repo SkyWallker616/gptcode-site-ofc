@@ -39,10 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Esconder/mostrar navbar baseado na direção do scroll
         if (currentScroll > lastScrollTop && currentScroll > 100) {
           // Scrolling down
+          nav.style.transition = "transform 0.5s ease, opacity 0.5s ease";
           nav.style.transform = "translateY(-100%)";
+          nav.style.opacity = "0";
         } else {
           // Scrolling up
           nav.style.transform = "translateY(0)";
+          nav.style.transform = "translateY(0)";
+          nav.style.opacity = "1";
         }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;

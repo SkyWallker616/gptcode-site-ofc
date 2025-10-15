@@ -1,291 +1,515 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projetos | GPTCode</title>
-    
+
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}"
+    />
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}" alt="GPTCode Icon" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('projetos') }}">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('devs') }}">Devs</a></li>
-                </ul>
-            </div>
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: white"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}"
+            alt="GPTCode Icon"
+            style="height: 50px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index') }}">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('projetos') }}"
+                >Projetos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('publicacoes') }}"
+                >Publicações</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contato') }}">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('devs') }}">Devs</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Header -->
     <header class="page-header d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-4 text-white fw-bold">Projetos</h1>
-            <p class="lead text-white-50">Conheça os projetos em andamento e concluídos do GPTCode</p>
-        </div>
+      <div class="container text-center">
+        <h1 class="display-4 text-white fw-bold">Projetos</h1>
+        <p class="lead text-white-50">
+          Conheça os projetos em andamento e concluídos do GPTCode
+        </p>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="py-5">
-        <div class="container">
-            <!-- Projetos em Andamento -->
-            <section class="mb-5">
-                <h2 class="section-title">I. Projetos em Andamento</h2>
-                <div class="project-category">
-                    <h4>Projetos PIBIC (2025/2026)</h4>
-                    <ul>
-                        <li>
-                            <strong>Desenvolvimento de um Sistema Web para Avaliação Periódica de Curso de Graduação no IFB – Campus Brasília</strong><br>
-                            <em>Estudante Pesquisador:</em> Davi Rocha Fortes Bezerra<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>Projetos PIBITI (2025/2026)</h4>
-                    <ul>
-                        <li>
-                            <strong>Game Based Learning (GBL) para o ensino de estrutura de dados: impactos na aprendizagem e engajamento</strong><br>
-                            <em>Estudante Pesquisadora:</em> Mayara Vieira Martins Santos<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>Projetos PTCC e TCC</h4>
-                    <ul>
-                        <li>
-                            <strong>Dashboard de Autoavaliação Institucional: uma ferramenta para a gestão e transparência dos Dados da CPA do IFB</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Davi Campos Parente e Ivanilson Paixão Cirqueira<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                        <li>
-                            <strong>Realidade Aumentada e Tabagismo</strong><br>
-                            <em>Estudante Pesquisador:</em> Luiz Fernando de Souza Dobbin<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                        <li>
-                            <strong>Análise de Sentimentos no Reddit: mensurando a opinião pública sobre temas governamentais</strong><br>
-                            <em>Estudante Pesquisador:</em> Sávio Vinícius Sousa<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                        <li>
-                            <strong>Plataforma de Agendamento Online para Trilhas no Cerrado</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Leandro Souza Rocha e Gabriel G. S. Silva<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                        <li>
-                            <strong>Realidade Aumentada no Ensino de Informática Básica: prototipagem criativa com design thinking</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Alice Alves da Gama e Luidy Baldez de Melo<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                        <li>
-                            <strong>Impactos Ambientais da IA Generativa: análise de relatórios ESG de big techs e proposta de indicadores transparentes</strong><br>
-                            <em>Estudante Pesquisador:</em> Mateus Nascimento Aires<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>Outros Projetos</h4>
-                    <ul>
-                        <li>
-                            <strong>Desenvolvimento do Site GPTCode</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Davi Rocha Fortes Bezerra e Gabriel Azevedo Marques<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-            </section>
+      <div class="container">
+        <!-- Projetos em Andamento -->
+        <section class="mb-5">
+          <h2 class="section-title">I. Projetos em Andamento</h2>
+          <div class="project-category">
+            <h4>Projetos PIBIC (2025/2026)</h4>
+            <ul>
+              <li>
+                <strong
+                  >Desenvolvimento de um Sistema Web para Avaliação Periódica de
+                  Curso de Graduação no IFB – Campus Brasília</strong
+                ><br />
+                <em>Estudante Pesquisador:</em> Davi Rocha Fortes Bezerra<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>Projetos PIBITI (2025/2026)</h4>
+            <ul>
+              <li>
+                <strong
+                  >Game Based Learning (GBL) para o ensino de estrutura de
+                  dados: impactos na aprendizagem e engajamento</strong
+                ><br />
+                <em>Estudante Pesquisadora:</em> Mayara Vieira Martins Santos<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>Projetos PTCC e TCC</h4>
+            <ul>
+              <li>
+                <strong
+                  >Dashboard de Autoavaliação Institucional: uma ferramenta para
+                  a gestão e transparência dos Dados da CPA do IFB</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Davi Campos Parente e
+                Ivanilson Paixão Cirqueira<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+              <li>
+                <strong>Realidade Aumentada e Tabagismo</strong><br />
+                <em>Estudante Pesquisador:</em> Luiz Fernando de Souza Dobbin<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+              <li>
+                <strong
+                  >Análise de Sentimentos no Reddit: mensurando a opinião
+                  pública sobre temas governamentais</strong
+                ><br />
+                <em>Estudante Pesquisador:</em> Sávio Vinícius Sousa<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+              <li>
+                <strong
+                  >Plataforma de Agendamento Online para Trilhas no
+                  Cerrado</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Leandro Souza Rocha e Gabriel
+                G. S. Silva<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+              <li>
+                <strong
+                  >Realidade Aumentada no Ensino de Informática Básica:
+                  prototipagem criativa com design thinking</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Alice Alves da Gama e Luidy
+                Baldez de Melo<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+              <li>
+                <strong
+                  >Impactos Ambientais da IA Generativa: análise de relatórios
+                  ESG de big techs e proposta de indicadores
+                  transparentes</strong
+                ><br />
+                <em>Estudante Pesquisador:</em> Mateus Nascimento Aires<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>Outros Projetos</h4>
+            <ul>
+              <li>
+                <strong>Desenvolvimento do Site GPTCode</strong><br />
+                <em>Estudantes Pesquisadores:</em> Davi Rocha Fortes Bezerra e
+                Gabriel Azevedo Marques<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+        </section>
 
-            <!-- Projetos Concluídos -->
-            <section>
-                <h2 class="section-title">II. Projetos Concluídos</h2>
-                <div class="project-category">
-                    <h4>Projetos PIBITI (2024/2025)</h4>
-                    <ul>
-                        <li>
-                            <strong>O uso da realidade aumentada como nova forma de ensinar e aprender: educação imersiva</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Alice Alves da Gama e Luidy Baldez de Melo<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>Projetos FABIN (2024)</h4>
-                    <ul>
-                        <li>
-                            <strong>Ambiente Virtual Imersivo para o Ensino de Informática Instrumental</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Eduardo Rodrigues Estrela e Edilson Nery Barbosa<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>Projetos PIPA (2024)</h4>
-                    <ul>
-                        <li>
-                            <strong>Desenvolvimento de Plataformas Web: redesign do Portal do IFB</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Davi Rocha Fortes Bezerra e Fernando Fábio Inocêncio Cavalcante<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>Projetos TCC</h4>
-                    <ul>
-                        <li>
-                            <strong>O uso da IA no aprendizado de linguagens de programação pelos alunos do curso de TSI do IFB - CBRA</strong><br>
-                            <em>Estudantes Pesquisadores:</em> Andersen Gonzaga Facundo e Anderson de Castro Gomes<br>
-                            <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
-                        </li>
-                    </ul>
-                </div>
-                <!--
-                <div class="project-category">
-                    <h4>2023</h4>
-                    <ul>
-                        <li>
-                            <strong>Uma análise de satisfação do uso de hipermídias em um aplicativo para dispositivo móvel de educação em saúde</strong><br>
-                            <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, José Valdeni; CONCEICAO, S. C. O.; GOMES, R. S.; ROCHA, P. S.; JARDIM, R. R.; JOFILSAN, N. C.; PEREIRA, P. P. S.<br>
-                            <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), v. 34, p. e2-29, 2023.<br>
-                            <strong>DOI:</strong> <a href="https://teyet-revista.info.unlp.edu.ar/TEyET/article/view/2159" target="_blank">DOI</a>
-                        </li>
-                        <li>
-                            <strong>Intervención Educativa Virtual sobre Nutrición em Brasil</strong><br>
-                            <em>Autores:</em> ANDRADE, Leonice Antunes Fonseca; PEREIRA, Dauster Souza; FERREIRA, Isabela Pimentel; PEREIRA, Priscilla Perez da Silva; DE OLIVEIRA, Luna Mares Lopes.<br>
-                            <em>Revista:</em> Revista Salud Publica y Nutricion, v. 22, p. 6-13, 2023.<br>
-                            <strong>DOI:</strong> <a href="https://respyn.uanl.mx/index.php/respyn/article/view/730" target="_blank">DOI</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>2022</h4>
-                    <ul>
-                        <li>
-                            <strong>Use of Information and Communication Technologies among Adults in Weight Control: Systematic Review and Meta-Analysis</strong><br>
-                            <em>Autores:</em> OLIVEIRA, Thatiana Wanessa; PEREIRA, Priscilla Perez da Silva; FONSECA, Leonice Antunes Fonseca; DE OLIVEIRA, Luna Mares Lopes; PEREIRA, Dauster Souza; NEIRA, Carla Paola Domingues; FIGUEIREDO, Ana Claudia Morais Godoy.<br>
-                            <em>Revista:</em> Nutrients, v. 14, p. 4809-4820, 2022.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.3390/nu14224809" target="_blank">DOI</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>2021</h4>
-                    <ul>
-                        <li>
-                            <strong>Modelo visual baseado em blocos encaixáveis para realizar o planejamento de Trajetórias de Aprendizagem</strong><br>
-                            <em>Autores:</em> ROCHA, P. S.; DE LIMA, José Valdeni; GOMES, R. S.; JARDIM, R. R.; PEREIRA, Dauster Souza; ROCHA, N. F.<br>
-                            <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), v. 1, p. 20-27, 2021.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.24215/18509959.27.e2" target="_blank">DOI</a>
-                        </li>
-                        <li>
-                            <strong>Hipermídias em Dispositivos Móveis para a Aprendizagem Autodirecionada sobre Saúde: a percepção do cuidador</strong><br>
-                            <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, José Valdeni; CONCEIÇÃO, Simone Cristina Oliveira; PEREIRA, Priscilla Perez da Silva; JARDIM, Rafaela Ribeiro; ROCHA, Paulo Santana.<br>
-                            <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), v. 1, p. e3-35, 2021.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.24215/18509959.29.e3" target="_blank">DOI</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>2019</h4>
-                    <ul>
-                        <li>
-                            <strong>Educational Games in the Construction of Knowledge in Programming Logic</strong><br>
-                            <em>Autores:</em> PEREIRA, Dauster Souza; SANTOS, Francisco Euder dos; DE LIMA, J. V.<br>
-                            <em>Revista:</em> INTERNATIONAL JOURNAL FOR INNOVATION EDUCATION AND RESEARCH, v. 7, p. 82-91, 2019.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.31686/ijier.vol7.iss2.1324" target="_blank">DOI</a>
-                        </li>
-                        <li>
-                            <strong>HTML5 Authoring Tool to Support the Teaching-Learning Process</strong><br>
-                            <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, J. V.; JARDIM, R. R.; ROCHA, P. S.; SANTOS, Francisco Euder dos; TAROUCO, L. M. R.<br>
-                            <em>Revista:</em> INTERNATIONAL JOURNAL FOR INNOVATION EDUCATION AND RESEARCH, v. 7, p. 92-103, 2019.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.31686/ijier.vol7.iss2.1325" target="_blank">DOI</a>
-                        </li>
-                        <li>
-                            <strong>Práticas com Simulações Computacionais para Melhoria de Desempenho para Lidar com Situações de Emergências</strong><br>
-                            <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, J. V.; CANTO FILHO, A. B.; ROCHA, P. S.; JARDIM, R. R.; SANTOS, Francisco Euder dos; PEREIRA, P. P. S.<br>
-                            <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), p. e07-71, 2019.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.24215/18509959.23.e07" target="_blank">DOI</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="project-category">
-                    <h4>2018</h4>
-                    <ul>
-                        <li>
-                            <strong>Modelando trajetórias de aprendizagem utilizando princípios de design baseado em blocos: um estudo de caso aplicado à aprendizagem em desenvolvimento web</strong><br>
-                            <em>Autores:</em> ROCHA, P. S.; DE LIMA, J. V.; JARDIM, R. R.; PEREIRA, Dauster Souza; KUHN, I.; ROCHA, R. L. P.<br>
-                            <em>Revista:</em> RENOTE. REVISTA NOVAS TECNOLOGIAS NA EDUCAÇÃO, v. 16, p. 351-361, 2018.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.22456/1679-1916.89259" target="_blank">DOI</a>
-                        </li>
-                        <li>
-                            <strong>A Robótica Educativa no Ensino de Lógica de Programação: uma revisão sistemática da literatura</strong><br>
-                            <em>Autores:</em> SANTOS, Francisco Euder dos; PEREIRA, Dauster Souza; GODIN, J. M.; DE LIMA, J. V.; ZARO, M. A.; CANTO FILHO, A. B.<br>
-                            <em>Revista:</em> RENOTE. REVISTA NOVAS TECNOLOGIAS NA EDUCAÇÃO, v. 16, p. 1-10, 2018.<br>
-                            <strong>DOI:</strong> <a href="http://dx.doi.org/10.22456/1679-1916.85907" target="_blank">DOI</a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            -->
-        </div>
+        <!-- Projetos Concluídos -->
+        <section>
+          <h2 class="section-title">II. Projetos Concluídos</h2>
+          <div class="project-category">
+            <h4>Projetos PIBITI (2024/2025)</h4>
+            <ul>
+              <li>
+                <strong
+                  >O uso da realidade aumentada como nova forma de ensinar e
+                  aprender: educação imersiva</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Alice Alves da Gama e Luidy
+                Baldez de Melo<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>Projetos FABIN (2024)</h4>
+            <ul>
+              <li>
+                <strong
+                  >Ambiente Virtual Imersivo para o Ensino de Informática
+                  Instrumental</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Eduardo Rodrigues Estrela e
+                Edilson Nery Barbosa<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>Projetos PIPA (2024)</h4>
+            <ul>
+              <li>
+                <strong
+                  >Desenvolvimento de Plataformas Web: redesign do Portal do
+                  IFB</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Davi Rocha Fortes Bezerra e
+                Fernando Fábio Inocêncio Cavalcante<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>Projetos TCC</h4>
+            <ul>
+              <li>
+                <strong
+                  >O uso da IA no aprendizado de linguagens de programação pelos
+                  alunos do curso de TSI do IFB - CBRA</strong
+                ><br />
+                <em>Estudantes Pesquisadores:</em> Andersen Gonzaga Facundo e
+                Anderson de Castro Gomes<br />
+                <em>Professor Orientador:</em> Prof. Dr. Dauster Souza Pereira
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-category">
+            <h4>2023</h4>
+            <ul>
+              <li>
+                <strong
+                  >Uma análise de satisfação do uso de hipermídias em um
+                  aplicativo para dispositivo móvel de educação em saúde</strong
+                ><br />
+                <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, José Valdeni;
+                CONCEICAO, S. C. O.; GOMES, R. S.; ROCHA, P. S.; JARDIM, R. R.;
+                JOFILSAN, N. C.; PEREIRA, P. P. S.<br />
+                <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN
+                EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), v. 34, p. e2-29,
+                2023.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="https://teyet-revista.info.unlp.edu.ar/TEyET/article/view/2159"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+              <li>
+                <strong
+                  >Intervención Educativa Virtual sobre Nutrición em
+                  Brasil</strong
+                ><br />
+                <em>Autores:</em> ANDRADE, Leonice Antunes Fonseca; PEREIRA,
+                Dauster Souza; FERREIRA, Isabela Pimentel; PEREIRA, Priscilla
+                Perez da Silva; DE OLIVEIRA, Luna Mares Lopes.<br />
+                <em>Revista:</em> Revista Salud Publica y Nutricion, v. 22, p.
+                6-13, 2023.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="https://respyn.uanl.mx/index.php/respyn/article/view/730"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>2022</h4>
+            <ul>
+              <li>
+                <strong
+                  >Use of Information and Communication Technologies among
+                  Adults in Weight Control: Systematic Review and
+                  Meta-Analysis</strong
+                ><br />
+                <em>Autores:</em> OLIVEIRA, Thatiana Wanessa; PEREIRA, Priscilla
+                Perez da Silva; FONSECA, Leonice Antunes Fonseca; DE OLIVEIRA,
+                Luna Mares Lopes; PEREIRA, Dauster Souza; NEIRA, Carla Paola
+                Domingues; FIGUEIREDO, Ana Claudia Morais Godoy.<br />
+                <em>Revista:</em> Nutrients, v. 14, p. 4809-4820, 2022.<br />
+                <strong>DOI:</strong>
+                <a href="http://dx.doi.org/10.3390/nu14224809" target="_blank"
+                  >DOI</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>2021</h4>
+            <ul>
+              <li>
+                <strong
+                  >Modelo visual baseado em blocos encaixáveis para realizar o
+                  planejamento de Trajetórias de Aprendizagem</strong
+                ><br />
+                <em>Autores:</em> ROCHA, P. S.; DE LIMA, José Valdeni; GOMES, R.
+                S.; JARDIM, R. R.; PEREIRA, Dauster Souza; ROCHA, N. F.<br />
+                <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN
+                EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), v. 1, p. 20-27,
+                2021.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.24215/18509959.27.e2"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+              <li>
+                <strong
+                  >Hipermídias em Dispositivos Móveis para a Aprendizagem
+                  Autodirecionada sobre Saúde: a percepção do cuidador</strong
+                ><br />
+                <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, José Valdeni;
+                CONCEIÇÃO, Simone Cristina Oliveira; PEREIRA, Priscilla Perez da
+                Silva; JARDIM, Rafaela Ribeiro; ROCHA, Paulo Santana.<br />
+                <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN
+                EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), v. 1, p. e3-35,
+                2021.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.24215/18509959.29.e3"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>2019</h4>
+            <ul>
+              <li>
+                <strong
+                  >Educational Games in the Construction of Knowledge in
+                  Programming Logic</strong
+                ><br />
+                <em>Autores:</em> PEREIRA, Dauster Souza; SANTOS, Francisco
+                Euder dos; DE LIMA, J. V.<br />
+                <em>Revista:</em> INTERNATIONAL JOURNAL FOR INNOVATION EDUCATION
+                AND RESEARCH, v. 7, p. 82-91, 2019.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.31686/ijier.vol7.iss2.1324"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+              <li>
+                <strong
+                  >HTML5 Authoring Tool to Support the Teaching-Learning
+                  Process</strong
+                ><br />
+                <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, J. V.;
+                JARDIM, R. R.; ROCHA, P. S.; SANTOS, Francisco Euder dos;
+                TAROUCO, L. M. R.<br />
+                <em>Revista:</em> INTERNATIONAL JOURNAL FOR INNOVATION EDUCATION
+                AND RESEARCH, v. 7, p. 92-103, 2019.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.31686/ijier.vol7.iss2.1325"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+              <li>
+                <strong
+                  >Práticas com Simulações Computacionais para Melhoria de
+                  Desempenho para Lidar com Situações de Emergências</strong
+                ><br />
+                <em>Autores:</em> PEREIRA, Dauster Souza; DE LIMA, J. V.; CANTO
+                FILHO, A. B.; ROCHA, P. S.; JARDIM, R. R.; SANTOS, Francisco
+                Euder dos; PEREIRA, P. P. S.<br />
+                <em>Revista:</em> REVISTA IBEROAMERICANA DE TECNOLOGIA EN
+                EDUCACIÓN Y EDUCACIÓN EN TECNOLOGÍA (EN LÍNEA), p. e07-71,
+                2019.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.24215/18509959.23.e07"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="project-category">
+            <h4>2018</h4>
+            <ul>
+              <li>
+                <strong
+                  >Modelando trajetórias de aprendizagem utilizando princípios
+                  de design baseado em blocos: um estudo de caso aplicado à
+                  aprendizagem em desenvolvimento web</strong
+                ><br />
+                <em>Autores:</em> ROCHA, P. S.; DE LIMA, J. V.; JARDIM, R. R.;
+                PEREIRA, Dauster Souza; KUHN, I.; ROCHA, R. L. P.<br />
+                <em>Revista:</em> RENOTE. REVISTA NOVAS TECNOLOGIAS NA EDUCAÇÃO,
+                v. 16, p. 351-361, 2018.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.22456/1679-1916.89259"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+              <li>
+                <strong
+                  >A Robótica Educativa no Ensino de Lógica de Programação: uma
+                  revisão sistemática da literatura</strong
+                ><br />
+                <em>Autores:</em> SANTOS, Francisco Euder dos; PEREIRA, Dauster
+                Souza; GODIN, J. M.; DE LIMA, J. V.; ZARO, M. A.; CANTO FILHO,
+                A. B.<br />
+                <em>Revista:</em> RENOTE. REVISTA NOVAS TECNOLOGIAS NA EDUCAÇÃO,
+                v. 16, p. 1-10, 2018.<br />
+                <strong>DOI:</strong>
+                <a
+                  href="http://dx.doi.org/10.22456/1679-1916.85907"
+                  target="_blank"
+                  >DOI</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer id="contato" class="py-5 bg-dark-blue text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h3 class="footer-brand">GPTCode</h3>
-                    <p>Grupo de Pesquisa em Tecnologias Computacionais</p>
-                    <p>Instituto Federal de Brasília</p>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Contato</h5>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D, E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G - Asa Norte, Brasília - DF, 70830-450</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Conecte-se</h5>
-                    <div class="social-links">
-                        <a href="https://github.com/GPTCodeIFB" class="social-link" target="_blank"><i class="bi bi-github"></i></a>
-                        <a href="https://www.instagram.com/gptcodeifb/?igsh=MWJqbHZpa2g5dDJt&utm_source=qr" class="social-link" target="_blank"><i class="bi bi-instagram"></i></a>
-                    </div>
-                    <div class="mt-3">
-                        <a href="#" class="btn btn-sm btn-outline-light back-to-top">Voltar ao topo <i class="bi bi-arrow-up"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h3 class="footer-brand">GPTCode</h3>
+            <p>Grupo de Pesquisa em Tecnologias Computacionais</p>
+            <p>Instituto Federal de Brasília</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Contato</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D,
+              E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G
+              - Asa Norte, Brasília - DF, 70830-450
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill me-2"></i>
+              <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Conecte-se</h5>
+            <div class="social-links">
+              <a
+                href="https://github.com/GPTCodeIFB"
+                class="social-link"
+                target="_blank"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/gptcodeifb/?igsh=MWJqbHZpa2g5dDJt&utm_source=qr"
+                class="social-link"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="small mb-0">&copy; 2025 GPTCode. Todos os direitos reservados.</p>
+            <div class="mt-3">
+              <a href="#" class="btn btn-sm btn-outline-light back-to-top"
+                >Voltar ao topo <i class="bi bi-arrow-up"></i
+              ></a>
             </div>
+          </div>
         </div>
+        <hr class="my-4" />
+        <div class="text-center">
+          <p class="small mb-0">
+            &copy; 2025 GPTCode. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
 </html>

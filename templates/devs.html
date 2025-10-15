@@ -1,77 +1,164 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Desenvolvedores do Site | GPTCode</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/equipe.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}" sizes="128x128">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/equipe.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}"
+      sizes="128x128"
+    />
     <style>
-        .developer-card {
-            background: var(--medium-blue);
-            color: white;
-        }
+      .developer-card {
+        background: var(--medium-blue);
+        color: white;
+      }
     </style>
-</head>
-<body>
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}" alt="GPTCode Icon" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('devs') }}">Devs</a></li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: white"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}"
+            alt="GPTCode Icon"
+            style="height: 50px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index') }}">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('publicacoes') }}"
+                >Publicações</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contato') }}">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('devs') }}">Devs</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <main class="container py-5" style="padding-top: 120px !important;">
-        <h1 class="mb-4 text-center">Desenvolvedores do Site</h1>
-        <div class="row justify-content-center g-4">
-            <div class="col-md-4 text-center">
-                <div class="developer-card card-lift p-4 rounded-3">
-                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/gabriel.azevedo.jpeg') }}" class="rounded-circle mb-3 avatar-float fade-in-up" width="150" alt="Gabriel Azevedo Marques">
-                    <h4 class="fade-in-up" style="animation-delay: 0.1s">Gabriel Azevedo Marques</h4>
-                    <p class="fade-in-up" style="animation-delay: 0.15s">Desenvolvedor Front-end e Backend</p>
-                    <a href="https://github.com/SkyWallker616" target="_blank" class="btn btn-dark fade-in-up" style="animation-delay: 0.2s"><i class="bi bi-github"></i> GitHub</a>
-                </div>
-            </div>
-            <div class="col-md-4 text-center">
-                <div class="developer-card card-lift p-4 rounded-3">
-                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi.png') }}" class="rounded-circle mb-3 avatar-float fade-in-up" width="150" alt="Davi Rocha Fortes Bezerra">
-                    <h4 class="fade-in-up" style="animation-delay: 0.12s">Davi Rocha Fortes Bezerra</h4>
-                    <p class="fade-in-up" style="animation-delay: 0.18s">Desenvolvedor Front-end</p>
-                    <a href="https://github.com/davirfb" target="_blank" class="btn btn-dark fade-in-up" style="animation-delay: 0.22s"><i class="bi bi-github"></i> GitHub</a>
-                </div>
-            </div>
+    <main class="container py-5" style="padding-top: 120px !important">
+      <h1 class="mb-4 text-center">Desenvolvedores do Site</h1>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4 text-center">
+          <div class="developer-card card-lift p-4 rounded-3">
+            <img
+              src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/gabriel.azevedo.jpeg') }}"
+              class="rounded-circle mb-3 avatar-float fade-in-up"
+              width="150"
+              alt="Gabriel Azevedo Marques"
+            />
+            <h4 class="fade-in-up" style="animation-delay: 0.1s">
+              Gabriel Azevedo Marques
+            </h4>
+            <p class="fade-in-up" style="animation-delay: 0.15s">
+              Desenvolvedor Front-end e Backend
+            </p>
+            <a
+              href="https://github.com/SkyWallker616"
+              target="_blank"
+              class="btn btn-dark fade-in-up"
+              style="animation-delay: 0.2s"
+              ><i class="bi bi-github"></i> GitHub</a
+            >
+          </div>
         </div>
-        <div class="text-center mt-5">
-            <a href="{{ url_for('contato') }}" class="btn btn-accent btn-lg">Entrar em contato</a>
+        <div class="col-md-4 text-center">
+          <div class="developer-card card-lift p-4 rounded-3">
+            <img
+              src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi.png') }}"
+              class="rounded-circle mb-3 avatar-float fade-in-up"
+              width="150"
+              alt="Davi Rocha Fortes Bezerra"
+            />
+            <h4 class="fade-in-up" style="animation-delay: 0.12s">
+              Davi Rocha Fortes Bezerra
+            </h4>
+            <p class="fade-in-up" style="animation-delay: 0.18s">
+              Desenvolvedor Front-end
+            </p>
+            <a
+              href="https://github.com/davirfb"
+              target="_blank"
+              class="btn btn-dark fade-in-up"
+              style="animation-delay: 0.22s"
+              ><i class="bi bi-github"></i> GitHub</a
+            >
+          </div>
         </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="{{ url_for('contato') }}" class="btn btn-accent btn-lg"
+          >Entrar em contato</a
+        >
+      </div>
     </main>
     <footer id="contato" class="py-5 bg-dark-blue text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>Contato</h5>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D, E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G - Asa Norte, Brasília - DF, 70830-450</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>Contato</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D,
+              E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G
+              - Asa Norte, Brasília - DF, 70830-450
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill me-2"></i>
+              <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a>
+            </p>
+          </div>
         </div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
 </html>

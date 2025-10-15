@@ -1,149 +1,199 @@
-{% extends 'base.html' %}
-
-{% block title %}Contato | GPTCode{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %}Contato | GPTCode{% endblock %} {%
+block content %}
 
 <!-- Header da Página -->
-<header class="page-header d-flex align-items-center" style="width: 100%; margin: 0; padding: 2rem 0; background: linear-gradient(to bottom, #0b193e, #0b193e); color: white;">
-    <div class="container text-center">
-        <h1 class="display-4 text-white fw-bold">Entre em Contato</h1>
-        <p class="lead text-white-50">Conecte-se conosco para colaborações, oportunidades e informações</p>
-    </div>
+<header class="page-header d-flex align-items-center">
+  <div class="container text-center">
+    <h1 class="display-4 text-white fw-bold">Entre em Contato</h1>
+    <p class="lead text-white-50">
+      Conecte-se conosco para colaborações, oportunidades e informações
+    </p>
+  </div>
 </header>
 
 <!-- Conteúdo Principal -->
 <div class="container py-5">
-    <!-- Informações de Contato -->
-    <div class="row mb-5">
-        <div class="col-lg-4 mb-4">
-            <div class="contact-info-card text-center">
-                <div class="contact-icon">
-                    <i class="bi bi-geo-alt-fill"></i>
-                </div>
-                <h5>Localização</h5>
-                <p>SGAN Quadra 610 Módulos D, E, F, G<br>
-                St. de Grandes Áreas Norte<br>
-                Asa Norte, Brasília - DF<br>
-                CEP: 70830-450</p>
-            </div>
+  <!-- Informações de Contato -->
+  <div class="row mb-5">
+    <div class="col-lg-4 mb-4">
+      <div class="contact-info-card text-center">
+        <div class="contact-icon">
+          <i class="bi bi-geo-alt-fill"></i>
         </div>
-        <div class="col-lg-4 mb-4">
-            <div class="contact-info-card text-center">
-                <div class="contact-icon">
-                    <i class="bi bi-envelope-fill"></i>
-                </div>
-                <h5>E-mail</h5>
-                <p><a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
-                <p class="small text-muted">Coordenação do GPTCode</p>
-            </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-            <div class="contact-info-card text-center">
-                <div class="contact-icon">
-                    <i class="bi bi-telephone-fill"></i>
-                </div>
-                <h5>Telefone</h5>
-                <p><a href="tel:+5561995088888">(61) 99508-8888</a></p>
-                <p class="small text-muted">Horário comercial</p>
-            </div>
-        </div>
+        <h5>Localização</h5>
+        <p>
+          SGAN Quadra 610 Módulos D, E, F, G<br />
+          St. de Grandes Áreas Norte<br />
+          Asa Norte, Brasília - DF<br />
+          CEP: 70830-450
+        </p>
+      </div>
     </div>
-
-    <!-- Formulário de Contato -->
-    <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <div class="contact-form-container">
-                <h3 class="text-center mb-4">Envie sua Mensagem</h3>
-                <form id="contactForm" class="contact-form" method="POST" action="{{ url_for('contato') }}">
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="nome" class="form-label">Nome Completo *</label>
-                            <input type="text" class="form-control" id="nome" name="nome" required>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label">E-mail *</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="telefone" class="form-label">Telefone</label>
-                            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(61) 99999-9999">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="assunto" class="form-label">Assunto *</label>
-                            <select class="form-control" id="assunto" name="assunto" required>
-                                <option value="">Selecione um assunto</option>
-                                <option value="pesquisa">Colaboração em Pesquisa</option>
-                                <option value="estagio">Oportunidades de Estágio</option>
-                                <option value="parceria">Parcerias Institucionais</option>
-                                <option value="orientacao">Orientação Acadêmica</option>
-                                <option value="projeto">Proposta de Projeto</option>
-                                <option value="informacoes">Informações Gerais</option>
-                                <option value="outros">Outros</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="instituicao" class="form-label">Instituição/Empresa</label>
-                        <input type="text" class="form-control" id="instituicao" name="instituicao" placeholder="Nome da sua instituição ou empresa">
-                    </div>
-                    <div class="mb-3">
-                        <label for="mensagem" class="form-label">Mensagem *</label>
-                        <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required placeholder="Descreva sua solicitação, dúvida ou proposta de colaboração..."></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-accent btn-lg">
-                            <i class="bi bi-send me-2"></i>Enviar Mensagem
-                        </button>
-                    </div>
-                </form>
-
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                  {% if messages %}
-                    {% for category, message in messages %}
-                      <div class="alert alert-{{ category }} mt-4" role="alert">
-                        <i class="bi bi-info-circle-fill me-2"></i>{{ message }}
-                      </div>
-                    {% endfor %}
-                  {% endif %}
-                {% endwith %}
-            </div>
+    <div class="col-lg-4 mb-4">
+      <div class="contact-info-card text-center">
+        <div class="contact-icon">
+          <i class="bi bi-envelope-fill"></i>
         </div>
+        <h5>E-mail</h5>
+        <p>
+          <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a>
+        </p>
+        <p class="small text-muted">Coordenação do GPTCode</p>
+      </div>
     </div>
-
-    <!-- Mapa ou Informações Adicionais -->
-    <div class="row mt-5">
-        <div class="col-12">
-            <div class="info-section">
-                <h4 class="text-center mb-4">Sobre o GPTCode</h4>
-                <div class="row">
-                    <div class="col-md-4 text-center mb-4">
-                        <div class="info-item">
-                            <i class="bi bi-lightbulb text-accent" style="font-size: 2rem;"></i>
-                            <h6 class="mt-2">Pesquisa & Inovação</h6>
-                            <p class="small text-muted">Desenvolvemos soluções tecnológicas inovadoras</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center mb-4">
-                        <div class="info-item">
-                            <i class="bi bi-people text-accent" style="font-size: 2rem;"></i>
-                            <h6 class="mt-2">Colaboração</h6>
-                            <p class="small text-muted">Trabalhamos em parceria com empresas e instituições</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center mb-4">
-                        <div class="info-item">
-                            <i class="bi bi-mortarboard text-accent" style="font-size: 2rem;"></i>
-                            <h6 class="mt-2">Formação</h6>
-                            <p class="small text-muted">Capacitamos estudantes em tecnologias de ponta</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="col-lg-4 mb-4">
+      <div class="contact-info-card text-center">
+        <div class="contact-icon">
+          <i class="bi bi-telephone-fill"></i>
         </div>
+        <h5>Telefone</h5>
+        <p><a href="tel:+5561995088888">(61) 99508-8888</a></p>
+        <p class="small text-muted">Horário comercial</p>
+      </div>
     </div>
+  </div>
+
+  <!-- Formulário de Contato -->
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="contact-form-container">
+        <h3 class="text-center mb-4">Envie sua Mensagem</h3>
+        <form
+          id="contactForm"
+          class="contact-form"
+          method="POST"
+          action="{{ url_for('contato') }}"
+        >
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nome" class="form-label">Nome Completo *</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                name="nome"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">E-mail *</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="telefone"
+                name="telefone"
+                placeholder="(61) 99999-9999"
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="assunto" class="form-label">Assunto *</label>
+              <select class="form-control" id="assunto" name="assunto" required>
+                <option value="">Selecione um assunto</option>
+                <option value="pesquisa">Colaboração em Pesquisa</option>
+                <option value="estagio">Oportunidades de Estágio</option>
+                <option value="parceria">Parcerias Institucionais</option>
+                <option value="orientacao">Orientação Acadêmica</option>
+                <option value="projeto">Proposta de Projeto</option>
+                <option value="informacoes">Informações Gerais</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="instituicao" class="form-label"
+              >Instituição/Empresa</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="instituicao"
+              name="instituicao"
+              placeholder="Nome da sua instituição ou empresa"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem *</label>
+            <textarea
+              class="form-control"
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              required
+              placeholder="Descreva sua solicitação, dúvida ou proposta de colaboração..."
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-accent btn-lg">
+              <i class="bi bi-send me-2"></i>Enviar Mensagem
+            </button>
+          </div>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %}
+        <div class="alert alert-{{ category }} mt-4" role="alert">
+          <i class="bi bi-info-circle-fill me-2"></i>{{ message }}
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Mapa ou Informações Adicionais -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="info-section">
+        <h4 class="text-center mb-4">Sobre o GPTCode</h4>
+        <div class="row">
+          <div class="col-md-4 text-center mb-4">
+            <div class="info-item">
+              <i
+                class="bi bi-lightbulb text-accent"
+                style="font-size: 2rem"
+              ></i>
+              <h6 class="mt-2">Pesquisa & Inovação</h6>
+              <p class="small text-muted">
+                Desenvolvemos soluções tecnológicas inovadoras
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div class="info-item">
+              <i class="bi bi-people text-accent" style="font-size: 2rem"></i>
+              <h6 class="mt-2">Colaboração</h6>
+              <p class="small text-muted">
+                Trabalhamos em parceria com empresas e instituições
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center mb-4">
+            <div class="info-item">
+              <i
+                class="bi bi-mortarboard text-accent"
+                style="font-size: 2rem"
+              ></i>
+              <h6 class="mt-2">Formação</h6>
+              <p class="small text-muted">
+                Capacitamos estudantes em tecnologias de ponta
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}

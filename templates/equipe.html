@@ -1,625 +1,980 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nossa Equipe | GPTCode</title>
-    
+
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS Personalizado -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/equipe.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animacoes.css') }}">
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}" sizes="128x128">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/equipe.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/animacoes.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}"
+      sizes="128x128"
+    />
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: white;">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}" alt="GPTCode Icon" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('publicacoes') }}">Publicações</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('equipe') }}">Equipe</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('contato') }}">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('devs') }}">Devs</a></li>
-                </ul>
-            </div>
+    <nav
+      id="navbar"
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: white"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}"
+            alt="GPTCode Icon"
+            style="height: 50px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('index') }}">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('projetos') }}">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('publicacoes') }}"
+                >Publicações</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('equipe') }}"
+                >Equipe</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('contato') }}">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('devs') }}">Devs</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Header da Página -->
     <header class="page-header d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-4 text-white fw-bold">Nossa Equipe</h1>
-            <p class="lead text-white-50">Conheça os pesquisadores, alunos e colaboradores do GPTCode</p>
-        </div>
+      <div class="container text-center">
+        <h1 class="display-4 text-white fw-bold">Nossa Equipe</h1>
+        <p class="lead text-white-50">
+          Conheça os pesquisadores, alunos e colaboradores do GPTCode
+        </p>
+      </div>
     </header>
 
     <!-- Conteúdo Principal -->
     <main class="py-5">
-        <div class="container">
-
-            <!-- Equipe em Cascata -->
-            <div class="team-cascade">
-                <!-- Professores -->
-                <div class="team-category" id="professores">
-                    <h2 class="category-title">Professores Pesquisadores</h2>
-                    <div class="row">
-                        <!-- Professor Dauster -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/Dauster.jpeg') }}" class="member-img" alt="Professor Dauster Souza Pereira">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/usuario" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Prof. Dr. Dauster Souza Pereira</h5>
-                                    <p class="member-role">Coordenador</p>
-                                    <p class="member-desc">Doutor em Informática na Educação pela UFRGS, professor do IFB e apaixonado por tecnologia.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Educação</span>
-                                        <span class="member-tag">Tecnologia</span>
-                                        <span class="member-tag">Pesquisa</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Professor Claudio -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/claudio.jpeg') }}" class="member-img" alt="Professor Claudio Ulisse">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/claulis/"><i class="bi bi-github"></i></a>
-                                            <!--<a href="#"><i class="bi bi-linkedin"></i></a> -->
-                                            <!--<a href="#"><i class="bi bi-envelope"></i></a> -->
-                                            <!--<a href="#"><i class="bi bi-file-person"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Prof. Me. Claudio Ulisse</h5>
-                                    <p class="member-role">Orientador</p>
-                                    <p class="member-desc">Professor de Ciência da Computação com Bacharelado em Sistemas de Informação. Mestre em Propriedade Intelectual e Transferência de Tecnologia para Inovação. Analista de sistemas e desenvolvedor web experiente, com expertise em integração de sistemas e arquitetura distribuída.</p>
-                                    <div class="member-tags">
-                                        <a href="https://github.com/claulis/"><i class="bi bi-github"></i></a>
-                                        <!--<span class="member-tag">Educação</span> -->
-                                        <!--<span class="member-tag">Tecnologia</span> -->
-                                        <!--<span class="member-tag">Pesquisa</span> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Professor Fernando Wagner -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/Fernando Wagner.jpeg') }}" class="member-img" alt="Professor Fernando Wagner Brito Hortêncio Filho">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="#"><i class="bi bi-github"></i></a>
-                                           <!--<a href="#"><i class="bi bi-linkedin"></i></a> -->
-                                            <!--<a href="#"><i class="bi bi-envelope"></i></a> -->
-                                            <!--<a href="#"><i class="bi bi-file-person"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Prof. Me. Fernando Wagner Brito Hortêncio Filho</h5>
-                                    <p class="member-role">Professor Orientador</p>
-                                    <p class="member-desc">Mestre em Ciência da Computação com expertise em desenvolvimento de software, arquitetura de sistemas e metodologias ágeis. Professor dedicado à formação de novos talentos em tecnologia.</p>
-                                    <div class="member-tags">
-                                        <a href="#"><i class="bi bi-github"></i></a>
-                                        <!--<span class="member-tag">Desenvolvimento</span> -->
-                                        <!--<span class="member-tag">Arquitetura</span> -->
-                                        <!--<span class="member-tag">Metodologias Ágeis</span> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Professora Sylvana -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="professores">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/professores/Sylvana.jpeg') }}" class="member-img" alt="Professora Sylvana Karla da Silva de Lemos Santos">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="#"><i class="bi bi-github"></i></a>
-                                            <!--<a href="#"><i class="bi bi-linkedin"></i></a> -->
-                                           <!--<a href="#"><i class="bi bi-envelope"></i></a> -->
-                                            <!--<a href="#"><i class="bi bi-file-person"></i></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Profª Drª Sylvana Karla da Silva de Lemos Santos</h5>
-                                    <p class="member-role">Professora Orientadora</p>
-                                    <p class="member-desc">Doutora em Ciência da Computação com especialização em inteligência artificial, machine learning e análise de dados. Pesquisadora ativa em tecnologias emergentes e inovação educacional.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">IA</span>
-                                        <span class="member-tag">Machine Learning</span>
-                                        <span class="member-tag">Análise de Dados</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      <div class="container">
+        <!-- Equipe em Cascata -->
+        <div class="team-cascade">
+          <!-- Professores -->
+          <div class="team-category" id="professores">
+            <h2 class="category-title">Professores Pesquisadores</h2>
+            <div class="row">
+              <!-- Professor Dauster -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="professores"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/professores/Dauster.jpeg') }}"
+                      class="member-img"
+                      alt="Professor Dauster Souza Pereira"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/usuario" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
                     </div>
-                </div>
-
-                <!-- Alunos de Graduação -->
-                <div class="team-category" id="graduacao">
-                    <h2 class="category-title">Alunos de Graduação</h2>
-                    <div class="row">
-                        <!-- Gabriel Azevedo -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/gabriel.azevedo.jpeg') }}" class="member-img" alt="Gabriel Azevedo Marques">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/SkyWallker616"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Gabriel Azevedo Marques</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Jovem acadêmico apaixonado por tecnologia e ciências, formado em Técnico em Desenvolvimento de Sistemas pelo IFB. Cursa Tecnologias em Sistemas para Internet (TSI) pelo IFB e Ciências da Computação pela Universidade Estácio.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Python</span>
-                                        <span class="member-tag">Desenvolvimento Web</span>
-                                        <span class="member-tag">Front-end</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Davi Rocha -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi.png') }}" class="member-img" alt="Davi Rocha Fortes Bezerra">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/davirfb"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Davi Rocha Fortes Bezerra</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante do IFB no curso de Tecnólogo em Sistemas para Internet (TSI). Apaixonado por desenvolvimento web e tecnologias emergentes, com interesse em front-end e experiência do usuário.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Desenvolvimento Web</span>
-                                        <span class="member-tag">Front-end</span>
-                                        <span class="member-tag">UX/UI</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Alice Alves da Gama -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Alice Alves da Gama.jpeg') }}" class="member-img" alt="Alice Alves da Gama">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/AliceAlvesG" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Alice Alves da Gama</h5>
-                                    <p class="member-role">Aluna de Graduação</p>
-                                    <p class="member-desc">Estudante dedicada com interesse em desenvolvimento de software e tecnologias emergentes. Focada em aprender novas linguagens de programação e metodologias de desenvolvimento.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Programação</span>
-                                        <span class="member-tag">Desenvolvimento</span>
-                                        <span class="member-tag">Tecnologia</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Luidy Baldez de Melo -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Luidy Baldez.jpeg') }}" class="member-img" alt="Luidy Baldez de Melo">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/lBALDEZl" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Luidy Baldez de Melo</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante com paixão por tecnologia e inovação. Interessado em desenvolvimento de sistemas e soluções computacionais que impactem positivamente a sociedade.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Sistemas</span>
-                                        <span class="member-tag">Inovação</span>
-                                        <span class="member-tag">Tecnologia</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Davi Campos Parente -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi Campos Parente.jpeg') }}" class="member-img" alt="Davi Campos Parente">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/DaviParente10" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Davi Campos Parente</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante entusiasta da área de computação, com foco em desenvolvimento de software e pesquisa em tecnologias computacionais avançadas.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Software</span>
-                                        <span class="member-tag">Pesquisa</span>
-                                        <span class="member-tag">Computação</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Eduardo Rodrigues Estrela -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Eduardo Rodrigues Estrela.jpeg') }}" class="member-img" alt="Eduardo Rodrigues Estrela">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/EduardoStarZ" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Eduardo Rodrigues Estrela</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante comprometido com a excelência acadêmica e interessado em tecnologias emergentes, especialmente em áreas de inteligência artificial e machine learning.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">IA</span>
-                                        <span class="member-tag">Machine Learning</span>
-                                        <span class="member-tag">Pesquisa</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Gabriel Gonçalves dos Santos Silva -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Gabriel Gonçalves dos Santos Silva.jpeg') }}" class="member-img" alt="Gabriel Gonçalves dos Santos Silva">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/Gabriel25484" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Gabriel Gonçalves dos Santos Silva</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante dedicado com interesse em desenvolvimento full-stack e arquitetura de software. Busca sempre aprender novas tecnologias e aplicá-las em projetos práticos.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Full-stack</span>
-                                        <span class="member-tag">Arquitetura</span>
-                                        <span class="member-tag">Desenvolvimento</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Ivanilson Paixão Cirqueira -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Ivanilson Paixão Cirqueira.jpeg') }}" class="member-img" alt="Ivanilson Paixão Cirqueira">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/ivanilsonstfler" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Ivanilson Paixão Cirqueira</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante apaixonado por tecnologia e inovação, com foco em desenvolvimento de aplicações web e mobile. Interessado em UX/UI e experiência do usuário.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Web</span>
-                                        <span class="member-tag">Mobile</span>
-                                        <span class="member-tag">UX/UI</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Leandro Souza Rocha -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Leandro Souza Rocha.jpeg') }}" class="member-img" alt="Leandro Souza Rocha">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/Leandrorocha17" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Leandro Souza Rocha</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante com interesse em segurança da informação e desenvolvimento de sistemas seguros. Busca contribuir para a criação de soluções tecnológicas robustas.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Segurança</span>
-                                        <span class="member-tag">Sistemas</span>
-                                        <span class="member-tag">Desenvolvimento</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Mateus Nascimento Aires -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Mateus Nascimento Aires.jpeg') }}" class="member-img" alt="Mateus Nascimento Aires">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/mateuaires" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Mateus Nascimento Aires</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante entusiasta da programação e desenvolvimento de software, com interesse especial em algoritmos e estruturas de dados. Sempre buscando otimizar soluções.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Algoritmos</span>
-                                        <span class="member-tag">Estruturas</span>
-                                        <span class="member-tag">Otimização</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Mayara Vieira Martins Santos -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Mayara Vieira Martins Santos.png') }}" class="member-img" alt="Mayara Vieira Martins Santos">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/MayaraVieiraa" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Mayara Vieira Martins Santos</h5>
-                                    <p class="member-role">Aluna de Graduação</p>
-                                    <p class="member-desc">Estudante dedicada com interesse em análise de dados e business intelligence. Focada em transformar dados em insights valiosos para tomada de decisões.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Dados</span>
-                                        <span class="member-tag">BI</span>
-                                        <span class="member-tag">Analytics</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Sávio Vinícius de Sousa -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Sávio Vinícius de Sousa.jpg') }}" class="member-img" alt="Sávio Vinícius de Sousa">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/savifb" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Sávio Vinícius de Sousa</h5>
-                                    <p class="member-role">Aluno de Graduação</p>
-                                    <p class="member-desc">Estudante com paixão por desenvolvimento backend e arquitetura de sistemas. Interessado em criar soluções escaláveis e eficientes para problemas complexos.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Backend</span>
-                                        <span class="member-tag">Arquitetura</span>
-                                        <span class="member-tag">Escalabilidade</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Vitória Santana Silva -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member" data-category="graduacao">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Vitória Santana Silva.jpg') }}" class="member-img" alt="Vitória Santana Silva">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/VII-Z" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Vitória Santana Silva</h5>
-                                    <p class="member-role">Aluna de Graduação</p>
-                                    <p class="member-desc">Estudante com interesse em desenvolvimento frontend e design de interfaces. Focada em criar experiências digitais intuitivas e acessíveis para todos os usuários.</p>
-                                    <div class="member-tags">
-                                        <span class="member-tag">Frontend</span>
-                                        <span class="member-tag">Design</span>
-                                        <span class="member-tag">Acessibilidade</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Prof. Dr. Dauster Souza Pereira</h5>
+                    <p class="member-role">Coordenador</p>
+                    <p class="member-desc">
+                      Doutor em Informática na Educação pela UFRGS, professor do
+                      IFB e apaixonado por tecnologia.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Educação</span>
+                      <span class="member-tag">Tecnologia</span>
+                      <span class="member-tag">Pesquisa</span>
                     </div>
+                  </div>
                 </div>
+              </div>
 
-                <!-- Alunos Técnicos -->
-                <div class="team-category" id="tecnico">
-                    <h2 class="category-title">Alunos Técnicos</h2>
-                    <div class="row">
-                        <div class="col-12 text-center mt-4">
-                            <h1 class="no-members-title">Nenhum membro por enquanto</h1>
-                        </div>
+              <!-- Professor Claudio -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="professores"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/professores/claudio.jpeg') }}"
+                      class="member-img"
+                      alt="Professor Claudio Ulisse"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/claulis/"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                        <!--<a href="#"><i class="bi bi-linkedin"></i></a> -->
+                        <!--<a href="#"><i class="bi bi-envelope"></i></a> -->
+                        <!--<a href="#"><i class="bi bi-file-person"></i></a> -->
+                      </div>
                     </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Prof. Me. Claudio Ulisse</h5>
+                    <p class="member-role">Orientador</p>
+                    <p class="member-desc">
+                      Professor de Ciência da Computação com Bacharelado em
+                      Sistemas de Informação. Mestre em Propriedade Intelectual
+                      e Transferência de Tecnologia para Inovação. Analista de
+                      sistemas e desenvolvedor web experiente, com expertise em
+                      integração de sistemas e arquitetura distribuída.
+                    </p>
+                    <div class="member-tags">
+                      <a href="https://github.com/claulis/"
+                        ><i class="bi bi-github"></i
+                      ></a>
+                      <!--<span class="member-tag">Educação</span> -->
+                      <!--<span class="member-tag">Tecnologia</span> -->
+                      <!--<span class="member-tag">Pesquisa</span> -->
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-                <!-- Ex-Alunos e Colaboradores -->
-                <div class="team-category" id="ex-alunos-colaboradores">
-                    <h2 class="category-title">Ex-Alunos do IFB e/ou Colaboradores Externos</h2>
-                    <div class="row">
-                        <!-- Andersen Gonzaga Facundo -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Andersen Gonzaga Facundo.jpeg') }}" class="member-img" alt="Andersen Gonzaga Facundo">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/andersengf" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Andersen Gonzaga Facundo</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Anderson de Castro Gomes -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Anderson de Castro Gomes.png') }}" class="member-img" alt="Anderson de Castro Gomes">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/AndersonCastroGomes" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Anderson de Castro Gomes</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Edilson Nery Barbosa -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Edilson Nery Barbosa.jpeg') }}" class="member-img" alt="Edilson Nery Barbosa">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/edilsonnerybarbosa" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Edilson Nery Barbosa</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Fernando Fábio Inocêncio Cavalcante -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
-                            <div class="member-card">
-                                <div class="member-img-container">
-                                    <img src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Fernando Fábio Inocêncio Cavalcante.jpeg') }}" class="member-img" alt="Fernando Fábio Inocêncio Cavalcante">
-                                    <div class="member-overlay">
-                                        <div class="member-social">
-                                            <a href="https://github.com/FernandoFIC" target="_blank"><i class="bi bi-github"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h5 class="member-name">Fernando Fábio Inocêncio Cavalcante</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Ciclano C -->
-                        <!--<div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">-->
-                            <!--<div class="member-card">-->
-                               <!-- <div class="member-img-container">-->
-                                    <!--<img src="imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Ciclano C.png" class="member-img" alt="Ciclano C">-->
-                                    <!--<div class="member-overlay">-->
-                                       <!-- <div class="member-social">-->
-                                            <!--<a href="https://github.com/ciclanoc" target="_blank"><i class="bi bi-github"></i></a>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="member-info">-->
-                                   <!-- <h5 class="member-name">Ciclano C</h5>-->
-                               <!-- </div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!-- Adicione outros conforme necessário -->
+              <!-- Professor Fernando Wagner -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="professores"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/professores/Fernando Wagner.jpeg') }}"
+                      class="member-img"
+                      alt="Professor Fernando Wagner Brito Hortêncio Filho"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <!--<a href="#"><i class="bi bi-linkedin"></i></a> -->
+                        <!--<a href="#"><i class="bi bi-envelope"></i></a> -->
+                        <!--<a href="#"><i class="bi bi-file-person"></i></a> -->
+                      </div>
                     </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">
+                      Prof. Me. Fernando Wagner Brito Hortêncio Filho
+                    </h5>
+                    <p class="member-role">Professor Orientador</p>
+                    <p class="member-desc">
+                      Mestre em Ciência da Computação com expertise em
+                      desenvolvimento de software, arquitetura de sistemas e
+                      metodologias ágeis. Professor dedicado à formação de novos
+                      talentos em tecnologia.
+                    </p>
+                    <div class="member-tags">
+                      <a href="#"><i class="bi bi-github"></i></a>
+                      <!--<span class="member-tag">Desenvolvimento</span> -->
+                      <!--<span class="member-tag">Arquitetura</span> -->
+                      <!--<span class="member-tag">Metodologias Ágeis</span> -->
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              <!-- Professora Sylvana -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="professores"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/professores/Sylvana.jpeg') }}"
+                      class="member-img"
+                      alt="Professora Sylvana Karla da Silva de Lemos Santos"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <!--<a href="#"><i class="bi bi-linkedin"></i></a> -->
+                        <!--<a href="#"><i class="bi bi-envelope"></i></a> -->
+                        <!--<a href="#"><i class="bi bi-file-person"></i></a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">
+                      Profª Drª Sylvana Karla da Silva de Lemos Santos
+                    </h5>
+                    <p class="member-role">Professora Orientadora</p>
+                    <p class="member-desc">
+                      Doutora em Ciência da Computação com especialização em
+                      inteligência artificial, machine learning e análise de
+                      dados. Pesquisadora ativa em tecnologias emergentes e
+                      inovação educacional.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">IA</span>
+                      <span class="member-tag">Machine Learning</span>
+                      <span class="member-tag">Análise de Dados</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Alunos de Graduação -->
+          <div class="team-category" id="graduacao">
+            <h2 class="category-title">Alunos de Graduação</h2>
+            <div class="row">
+              <!-- Gabriel Azevedo -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/gabriel.azevedo.jpeg') }}"
+                      class="member-img"
+                      alt="Gabriel Azevedo Marques"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/SkyWallker616"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Gabriel Azevedo Marques</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Jovem acadêmico apaixonado por tecnologia e ciências,
+                      formado em Técnico em Desenvolvimento de Sistemas pelo
+                      IFB. Cursa Tecnologias em Sistemas para Internet (TSI)
+                      pelo IFB e Ciências da Computação pela Universidade
+                      Estácio.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Python</span>
+                      <span class="member-tag">Desenvolvimento Web</span>
+                      <span class="member-tag">Front-end</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Davi Rocha -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi.png') }}"
+                      class="member-img"
+                      alt="Davi Rocha Fortes Bezerra"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/davirfb"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Davi Rocha Fortes Bezerra</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante do IFB no curso de Tecnólogo em Sistemas para
+                      Internet (TSI). Apaixonado por desenvolvimento web e
+                      tecnologias emergentes, com interesse em front-end e
+                      experiência do usuário.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Desenvolvimento Web</span>
+                      <span class="member-tag">Front-end</span>
+                      <span class="member-tag">UX/UI</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alice Alves da Gama -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Alice Alves da Gama.jpeg') }}"
+                      class="member-img"
+                      alt="Alice Alves da Gama"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/AliceAlvesG" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Alice Alves da Gama</h5>
+                    <p class="member-role">Aluna de Graduação</p>
+                    <p class="member-desc">
+                      Estudante dedicada com interesse em desenvolvimento de
+                      software e tecnologias emergentes. Focada em aprender
+                      novas linguagens de programação e metodologias de
+                      desenvolvimento.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Programação</span>
+                      <span class="member-tag">Desenvolvimento</span>
+                      <span class="member-tag">Tecnologia</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Luidy Baldez de Melo -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Luidy Baldez.jpeg') }}"
+                      class="member-img"
+                      alt="Luidy Baldez de Melo"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/lBALDEZl" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Luidy Baldez de Melo</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante com paixão por tecnologia e inovação.
+                      Interessado em desenvolvimento de sistemas e soluções
+                      computacionais que impactem positivamente a sociedade.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Sistemas</span>
+                      <span class="member-tag">Inovação</span>
+                      <span class="member-tag">Tecnologia</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Davi Campos Parente -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Davi Campos Parente.jpeg') }}"
+                      class="member-img"
+                      alt="Davi Campos Parente"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/DaviParente10"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Davi Campos Parente</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante entusiasta da área de computação, com foco em
+                      desenvolvimento de software e pesquisa em tecnologias
+                      computacionais avançadas.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Software</span>
+                      <span class="member-tag">Pesquisa</span>
+                      <span class="member-tag">Computação</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Eduardo Rodrigues Estrela -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Eduardo Rodrigues Estrela.jpeg') }}"
+                      class="member-img"
+                      alt="Eduardo Rodrigues Estrela"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/EduardoStarZ"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Eduardo Rodrigues Estrela</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante comprometido com a excelência acadêmica e
+                      interessado em tecnologias emergentes, especialmente em
+                      áreas de inteligência artificial e machine learning.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">IA</span>
+                      <span class="member-tag">Machine Learning</span>
+                      <span class="member-tag">Pesquisa</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gabriel Gonçalves dos Santos Silva -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Gabriel Gonçalves dos Santos Silva.jpeg') }}"
+                      class="member-img"
+                      alt="Gabriel Gonçalves dos Santos Silva"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/Gabriel25484"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">
+                      Gabriel Gonçalves dos Santos Silva
+                    </h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante dedicado com interesse em desenvolvimento
+                      full-stack e arquitetura de software. Busca sempre
+                      aprender novas tecnologias e aplicá-las em projetos
+                      práticos.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Full-stack</span>
+                      <span class="member-tag">Arquitetura</span>
+                      <span class="member-tag">Desenvolvimento</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ivanilson Paixão Cirqueira -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Ivanilson Paixão Cirqueira.jpeg') }}"
+                      class="member-img"
+                      alt="Ivanilson Paixão Cirqueira"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/ivanilsonstfler"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Ivanilson Paixão Cirqueira</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante apaixonado por tecnologia e inovação, com foco
+                      em desenvolvimento de aplicações web e mobile. Interessado
+                      em UX/UI e experiência do usuário.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Web</span>
+                      <span class="member-tag">Mobile</span>
+                      <span class="member-tag">UX/UI</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Leandro Souza Rocha -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Leandro Souza Rocha.jpeg') }}"
+                      class="member-img"
+                      alt="Leandro Souza Rocha"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/Leandrorocha17"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Leandro Souza Rocha</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante com interesse em segurança da informação e
+                      desenvolvimento de sistemas seguros. Busca contribuir para
+                      a criação de soluções tecnológicas robustas.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Segurança</span>
+                      <span class="member-tag">Sistemas</span>
+                      <span class="member-tag">Desenvolvimento</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mateus Nascimento Aires -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Mateus Nascimento Aires.jpeg') }}"
+                      class="member-img"
+                      alt="Mateus Nascimento Aires"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/mateuaires" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Mateus Nascimento Aires</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante entusiasta da programação e desenvolvimento de
+                      software, com interesse especial em algoritmos e
+                      estruturas de dados. Sempre buscando otimizar soluções.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Algoritmos</span>
+                      <span class="member-tag">Estruturas</span>
+                      <span class="member-tag">Otimização</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mayara Vieira Martins Santos -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Mayara Vieira Martins Santos.png') }}"
+                      class="member-img"
+                      alt="Mayara Vieira Martins Santos"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/MayaraVieiraa"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Mayara Vieira Martins Santos</h5>
+                    <p class="member-role">Aluna de Graduação</p>
+                    <p class="member-desc">
+                      Estudante dedicada com interesse em análise de dados e
+                      business intelligence. Focada em transformar dados em
+                      insights valiosos para tomada de decisões.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Dados</span>
+                      <span class="member-tag">BI</span>
+                      <span class="member-tag">Analytics</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sávio Vinícius de Sousa -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Sávio Vinícius de Sousa.jpg') }}"
+                      class="member-img"
+                      alt="Sávio Vinícius de Sousa"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/savifb" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Sávio Vinícius de Sousa</h5>
+                    <p class="member-role">Aluno de Graduação</p>
+                    <p class="member-desc">
+                      Estudante com paixão por desenvolvimento backend e
+                      arquitetura de sistemas. Interessado em criar soluções
+                      escaláveis e eficientes para problemas complexos.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Backend</span>
+                      <span class="member-tag">Arquitetura</span>
+                      <span class="member-tag">Escalabilidade</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vitória Santana Silva -->
+              <div
+                class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member"
+                data-category="graduacao"
+              >
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Vitória Santana Silva.jpg') }}"
+                      class="member-img"
+                      alt="Vitória Santana Silva"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/VII-Z" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Vitória Santana Silva</h5>
+                    <p class="member-role">Aluna de Graduação</p>
+                    <p class="member-desc">
+                      Estudante com interesse em desenvolvimento frontend e
+                      design de interfaces. Focada em criar experiências
+                      digitais intuitivas e acessíveis para todos os usuários.
+                    </p>
+                    <div class="member-tags">
+                      <span class="member-tag">Frontend</span>
+                      <span class="member-tag">Design</span>
+                      <span class="member-tag">Acessibilidade</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alunos Técnicos -->
+          <div class="team-category" id="tecnico">
+            <h2 class="category-title">Alunos Técnicos</h2>
+            <div class="row">
+              <div class="col-12 text-center mt-4">
+                <h1 class="no-members-title">Nenhum membro por enquanto</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ex-Alunos e Colaboradores -->
+          <div class="team-category" id="ex-alunos-colaboradores">
+            <h2 class="category-title">
+              Ex-Alunos do IFB e/ou Colaboradores Externos
+            </h2>
+            <div class="row">
+              <!-- Andersen Gonzaga Facundo -->
+              <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Andersen Gonzaga Facundo.jpeg') }}"
+                      class="member-img"
+                      alt="Andersen Gonzaga Facundo"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/andersengf" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Andersen Gonzaga Facundo</h5>
+                  </div>
+                </div>
+              </div>
+              <!-- Anderson de Castro Gomes -->
+              <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Anderson de Castro Gomes.png') }}"
+                      class="member-img"
+                      alt="Anderson de Castro Gomes"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/AndersonCastroGomes"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Anderson de Castro Gomes</h5>
+                  </div>
+                </div>
+              </div>
+              <!-- Edilson Nery Barbosa -->
+              <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Edilson Nery Barbosa.jpeg') }}"
+                      class="member-img"
+                      alt="Edilson Nery Barbosa"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a
+                          href="https://github.com/edilsonnerybarbosa"
+                          target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">Edilson Nery Barbosa</h5>
+                  </div>
+                </div>
+              </div>
+              <!-- Fernando Fábio Inocêncio Cavalcante -->
+              <div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">
+                <div class="member-card">
+                  <div class="member-img-container">
+                    <img
+                      src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Fernando Fábio Inocêncio Cavalcante.jpeg') }}"
+                      class="member-img"
+                      alt="Fernando Fábio Inocêncio Cavalcante"
+                    />
+                    <div class="member-overlay">
+                      <div class="member-social">
+                        <a href="https://github.com/FernandoFIC" target="_blank"
+                          ><i class="bi bi-github"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="member-info">
+                    <h5 class="member-name">
+                      Fernando Fábio Inocêncio Cavalcante
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <!-- Ciclano C -->
+              <!--<div class="col-xl-3 col-lg-4 col-md-6 mb-4 team-member">-->
+              <!--<div class="member-card">-->
+              <!-- <div class="member-img-container">-->
+              <!--<img src="imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Ciclano C.png" class="member-img" alt="Ciclano C">-->
+              <!--<div class="member-overlay">-->
+              <!-- <div class="member-social">-->
+              <!--<a href="https://github.com/ciclanoc" target="_blank"><i class="bi bi-github"></i></a>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!--<div class="member-info">-->
+              <!-- <h5 class="member-name">Ciclano C</h5>-->
+              <!-- </div>-->
+              <!--</div>-->
+              <!--</div>-->
+              <!-- Adicione outros conforme necessário -->
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer id="contato" class="py-5 bg-dark-blue text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h3 class="footer-brand">GPTCode</h3>
-                    <p>Grupo de Pesquisa em Tecnologias Computacionais</p>
-                    <p>Instituto Federal de Brasília</p>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Contato</h5>
-                    <p><i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D, E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G - Asa Norte, Brasília - DF, 70830-450</p>
-                    <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a></p>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Conecte-se</h5>
-                    <div class="social-links">
-                        <a href="https://github.com/GPTCodeIFB" class="social-link" target="_blank"><i class="bi bi-github"></i></a>
-                        <a href="https://www.instagram.com/gptcodeifb/?igsh=MWJqbHZpa2g5dDJt&utm_source=qr" class="social-link" target="_blank"><i class="bi bi-instagram"></i></a>
-                    </div>
-                    <div class="mt-3">
-                        <a href="#" class="btn btn-sm btn-outline-light back-to-top">Voltar ao topo <i class="bi bi-arrow-up"></i></a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h3 class="footer-brand">GPTCode</h3>
+            <p>Grupo de Pesquisa em Tecnologias Computacionais</p>
+            <p>Instituto Federal de Brasília</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Contato</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D,
+              E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G
+              - Asa Norte, Brasília - DF, 70830-450
+            </p>
+            <p>
+              <i class="bi bi-envelope-fill me-2"></i>
+              <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Conecte-se</h5>
+            <div class="social-links">
+              <a
+                href="https://github.com/GPTCodeIFB"
+                class="social-link"
+                target="_blank"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/gptcodeifb/?igsh=MWJqbHZpa2g5dDJt&utm_source=qr"
+                class="social-link"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
             </div>
-            <hr class="my-4">
-            <div class="text-center">
-                <p class="small mb-0">&copy; 2025 GPTCode. Todos os direitos reservados.</p>
+            <div class="mt-3">
+              <a href="#" class="btn btn-sm btn-outline-light back-to-top"
+                >Voltar ao topo <i class="bi bi-arrow-up"></i
+              ></a>
             </div>
+          </div>
         </div>
+        <hr class="my-4" />
+        <div class="text-center">
+          <p class="small mb-0">
+            &copy; 2025 GPTCode. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/equipe.js') }}"></script>
-</body>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
 </html>
