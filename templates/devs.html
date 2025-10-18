@@ -36,15 +36,15 @@
   <body>
     <nav
       id="navbar"
-      class="navbar navbar-expand-lg fixed-top"
+      class="navbar navbar-expand-xl fixed-top"
       style="background-color: white"
     >
       <div class="container">
         <a class="navbar-brand" href="{{ url_for('index') }}">
           <img
-            src="{{ url_for('static', filename='imagens/logos/gptcode-icon-pages.png') }}"
+            src="{{ url_for('static', filename='imagens/logos/logo-removebg-preview (1).png') }}"
             alt="GPTCode Icon"
-            style="height: 50px"
+            style="height: 65px"
           />
         </a>
         <button
@@ -87,6 +87,7 @@
     <main class="container py-5" style="padding-top: 120px !important">
       <h1 class="mb-4 text-center">Desenvolvedores do Site</h1>
       <div class="row justify-content-center g-4">
+        <!--Gabriel-->
         <div class="col-md-4 text-center">
           <div class="developer-card card-lift p-4 rounded-3">
             <img
@@ -110,6 +111,7 @@
             >
           </div>
         </div>
+      <!--Davi-->
         <div class="col-md-4 text-center">
           <div class="developer-card card-lift p-4 rounded-3">
             <img
@@ -133,16 +135,76 @@
             >
           </div>
         </div>
+        <div class="row justify-content-center g-4">
+          <!--Lucas-->
+        <div class="col-md-4 text-center">
+          <div class="developer-card card-lift p-4 rounded-3">
+            <img
+              src="{{ url_for('static', filename='imagens/equipe/alunos/graduacao/Lucas.png') }}"
+              class="rounded-circle mb-3 avatar-float fade-in-up"
+              width="150"
+              alt="Lucas Henrique Ferreira Alves"
+            />
+            <h4 class="fade-in-up" style="animation-delay: 0.12s">
+              Lucas Henrique Ferreira Alves
+            </h4>
+            <p class="fade-in-up" style="animation-delay: 0.18s">
+              Desenvolvedor Front-end
+            </p>
+            <a
+              href="https://github.com/lucashf04"
+              target="_blank"
+              class="btn btn-dark fade-in-up"
+              style="animation-delay: 0.22s"
+              ><i class="bi bi-github"></i> GitHub</a
+            >
+          </div>
+        </div>
+     
+       <!--Luiz-->
+        <div class="col-md-4 text-center">
+          <div class="developer-card card-lift p-4 rounded-3">
+            <img
+              src="{{ url_for('static', filename='imagens/equipe/alunos/ExAlunos do IFB e ou Colaboradores Externos/Luiz.jpg') }}"
+              class="rounded-circle mb-3 avatar-float fade-in-up"
+              width="150"
+              alt="Luiz Gustavo de Sousa Batista"
+            />
+            <h4 class="fade-in-up" style="animation-delay: 0.12s">
+              Luiz Gustavo de Sousa Batista
+            </h4>
+            <p class="fade-in-up" style="animation-delay: 0.18s">
+              Desenvolvedor Backend
+            </p>
+            <a
+              href="https://github.com/luizgsdb"
+              target="_blank"
+              class="btn btn-dark fade-in-up"
+              style="animation-delay: 0.22s"
+              ><i class="bi bi-github"></i> GitHub</a
+            >
+          </div>
+        </div>
       </div>
+
+      
       <div class="text-center mt-5">
         <a href="{{ url_for('contato') }}" class="btn btn-accent btn-lg"
-          >Entrar em contato</a
-        >
+          >Entrar em contato</a>
+          
       </div>
+      </div>
+    </div>
     </main>
+    <!-- Footer -->
     <footer id="contato" class="py-5 bg-dark-blue text-white">
       <div class="container">
         <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h3 class="footer-brand">GPTCode</h3>
+            <p>Grupo de Pesquisa em Tecnologias Computacionais</p>
+            <p>Instituto Federal de Brasília</p>
+          </div>
           <div class="col-lg-4 mb-4">
             <h5>Contato</h5>
             <p>
@@ -155,9 +217,38 @@
               <a href="mailto:gptcode@gptcode.com.br">gptcode@gptcode.com.br</a>
             </p>
           </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Conecte-se</h5>
+            <div class="social-links">
+              <a
+                href="https://github.com/GPTCodeIFB"
+                class="social-link"
+                target="_blank"
+                ><i class="bi bi-github"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/gptcodeifb/?igsh=MWJqbHZpa2g5dDJt&utm_source=qr"
+                class="social-link"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </div>
+            <div class="mt-3">
+              <a href="#" class="btn btn-sm btn-outline-light back-to-top"
+                >Voltar ao topo <i class="bi bi-arrow-up"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="text-center">
+          <p class="small mb-0">
+            &copy; 2025 GPTCode. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>

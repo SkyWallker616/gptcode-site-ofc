@@ -2,12 +2,13 @@
   --dark-blue: #0b193e;
   --medium-blue: #427aa1;
   /* accent gold: adjusted to a slightly cooler/muted mustard for better contrast */
-  --accent-gold: #d4b24a;
-  --accent-gold-dark: #b7952f;
+  --accent-gold: #6c757d;
+  --accent-gold-dark: #343a40;
   --light-blue: #a5c9e0;
   --light-text: #f8f9fa;
   --dark-text: #212529;
   --font-family: "Poppins", sans-serif;
+  --yellow: #ffcc00;
 }
 
 * {
@@ -180,7 +181,7 @@ body {
 
 .btn-accent {
   background-color: var(--accent-gold);
-  color: var(--dark-blue);
+  color: var(--light-text);
   font-weight: 600;
   border: none;
   border-radius: 50px;
@@ -193,7 +194,7 @@ body {
 
 .btn-accent:hover {
   background-color: var(--accent-gold-dark);
-  color: var(--dark-blue);
+  color: var(--light-text);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(183, 149, 47, 0.18);
 }
@@ -220,13 +221,14 @@ body {
 .btn-warning {
   background-color: var(--accent-gold);
   border-color: var(--accent-gold);
-  color: #fff; /* Letras brancas */
+  color: var(--light-text);
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn-warning:hover {
   background-color: var(--accent-gold-dark);
   transform: scale(1.05);
+  color: var(--light-text);
 }
 
 .btn-outline-warning {
@@ -557,11 +559,11 @@ body {
 
 .contact-icon i {
   font-size: 2rem;
-  color: var(--dark-blue);
+  color: var(--light-text);
 }
 
 .contact-info-card h5 {
-  color: var(--dark-blue);
+  color: var(--);
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -573,7 +575,7 @@ body {
 }
 
 .contact-info-card a:hover {
-  color: var(--accent-gold);
+  color: var(--yellow);
 }
 
 .info-section {

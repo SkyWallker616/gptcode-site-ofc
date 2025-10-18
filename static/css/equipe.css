@@ -38,11 +38,9 @@
   box-shadow: 0 12px 28px rgba(16, 24, 32, 0.15);
   transition: all 0.5s ease-in-out;
   height: 100%;
-  animation: fadeIn 0.6s ease-in-out, slideInUp 0.8s ease-out;
 }
 
 .member-card:hover {
-  transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(16, 24, 32, 0.25);
   animation: none; /* Remove animação ao hover para evitar conflitos */
 }
@@ -146,34 +144,12 @@
 }
 
 /* Animações */
-.team-member {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-in-out;
-}
 
 .team-member.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* Unificar animações dos cards dos membros da equipe com os desenvolvedores */
-.member-card {
-  background: var(--medium-blue);
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid rgba(34, 41, 47, 0.06);
-  box-shadow: 0 12px 28px rgba(16, 24, 32, 0.06);
-  transition: all 0.5s ease-in-out;
-  height: 100%;
-  animation: fadeIn 0.6s ease-in-out, slideInUp 0.8s ease-out;
-}
-
-.member-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(16, 24, 32, 0.1);
-  animation: none; /* Remove animação ao hover para evitar conflitos */
-}
 
 .member-name {
   color: white;
@@ -181,7 +157,7 @@
 }
 
 .member-role {
-  color: var(--accent-gold);
+  color: var(--yellow);
 }
 
 .member-social a {
