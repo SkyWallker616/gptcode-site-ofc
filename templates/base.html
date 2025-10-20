@@ -39,20 +39,56 @@
       href="{{ url_for('static', filename='imagens/logos/GPTCODE-LOGO-BARRA.png') }}"
       sizes="32x32"
     />
+    <style>
+      /* Ajustes para animações suaves */
+      .fade-in {
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .navbar a {
+        transition: color 0.4s ease, transform 0.4s ease;
+      }
+
+      .navbar a:hover {
+        color: #6c757d; /* Cinza */
+        transform: scale(1.05);
+      }
+
+      /* Faixas 100% para os lados */
+      main {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Centralização de textos principais */
+      .container {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav
       id="navbar"
       class="navbar navbar-expand-lg fixed-top shadow-sm"
-      style="background-color: white; transition: background-color 0.3s"
+      style="background-color: white; transition: background-color 0.4s ease"
     >
       <div class="container">
         <a class="navbar-brand" href="{{ url_for('index') }}">
           <img
             src="{{ url_for('static', filename='imagens/logos/logo-removebg-preview (1).png') }}"
             alt="GPTCode Icon"
-            style="height: 65px; transition: transform 0.3s"
+            style="height: 65px; transition: transform 0.4s ease"
           />
         </a>
         <button
@@ -70,9 +106,8 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a
-                class="nav-link active text-dark"
+                class="nav-link text-dark"
                 href="{{ url_for('index') }}"
-                style="transition: color 0.3s"
                 >Início</a
               >
             </li>
@@ -80,7 +115,6 @@
               <a
                 class="nav-link text-dark"
                 href="{{ url_for('projetos') }}"
-                style="transition: color 0.3s"
                 >Projetos</a
               >
             </li>
@@ -88,7 +122,6 @@
               <a
                 class="nav-link text-dark"
                 href="{{ url_for('publicacoes') }}"
-                style="transition: color 0.3s"
                 >Publicações</a
               >
             </li>
@@ -96,7 +129,6 @@
               <a
                 class="nav-link text-dark"
                 href="{{ url_for('equipe') }}"
-                style="transition: color 0.3s"
                 >Equipe</a
               >
             </li>
@@ -104,7 +136,6 @@
               <a
                 class="nav-link text-dark"
                 href="{{ url_for('contato') }}"
-                style="transition: color 0.3s"
                 >Contato</a
               >
             </li>
@@ -112,7 +143,6 @@
               <a
                 class="nav-link text-dark"
                 href="{{ url_for('devs') }}"
-                style="transition: color 0.3s"
                 >Devs</a
               >
             </li>
@@ -139,8 +169,7 @@
             <h5>Contato</h5>
             <p>
               <i class="bi bi-geo-alt-fill me-2"></i> SGAN Quadra 610 Módulos D,
-              E, F, G, St. de Grandes Áreas Norte Quadra 610 Módulos D, E, F, G
-              - Asa Norte, Brasília - DF, 70830-450
+              E, F, G - Asa Norte, Brasília - DF, 70830-450
             </p>
             <p>
               <i class="bi bi-envelope-fill me-2"></i>
@@ -157,7 +186,7 @@
                 ><i class="bi bi-github"></i
               ></a>
               <a
-                href="https://www.instagram.com/gptcodeifb/?igsh=MWJqbHZpa2g5dDJt&utm_source=qr"
+                href="https://www.instagram.com/gptcodeifb/"
                 class="social-link"
                 target="_blank"
                 ><i class="bi bi-instagram"></i

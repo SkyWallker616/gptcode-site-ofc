@@ -157,6 +157,8 @@ body {
   );
   position: relative;
   overflow: hidden;
+  width: 100vw; /* Ocupa 100% da largura da viewport */
+  margin-left: calc(-50vw + 50%); /* Remove espaços laterais */
 }
 
 .hero::before {
@@ -233,7 +235,7 @@ body {
 
 .btn-outline-warning {
   border-color: var(--accent-gold);
-  color: var(--accent-gold);
+  color: var (--accent-gold);
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
@@ -820,6 +822,15 @@ footer .social-link {
   text-align: center;
 }
 
+.full-width-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
 /* Responsividade */
 @media (max-width: 991px) {
   .navbar-nav {
@@ -1119,3 +1130,16 @@ footer#contato .text-center p.small {
 }
 
 /* End merged additions */
+
+/* Hide the blue header section specifically for the "devs" page */
+.page-header.devs-page {
+  display: none !important; /* Ensure it is completely hidden */
+}
+
+/* Footer adjustments for icon alignment */
+footer#contato .social-links {
+  display: flex;
+  justify-content: center; /* Center the icons */
+  gap: 1rem;
+  margin-top: 1rem;
+}
